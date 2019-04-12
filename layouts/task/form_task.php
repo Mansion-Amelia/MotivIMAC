@@ -59,7 +59,7 @@
     <label class="form_label" for="start_task">Date de début : </label>
         <input class="form_input" id="start_task" type="date" name="start_task" required>
     <br>
-    <label class="form_label" for="end_task">Date de début : </label>
+    <label class="form_label" for="end_task">Date de fin : </label>
         <input class="form_input" id="end_task" type="date" name="end_task" required>
         <br>
     <label class="form_label" for="id_difficulty">Difficulté : </label>

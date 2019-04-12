@@ -35,11 +35,11 @@
         <fieldset>
             <legend class="form_legend">Identité</legend>
             <label class="form_label" for="lastname_user">Nom : </label>
-                <input id="lastname_user" class="form_input" type="text" name="lastname_user" required>
+                <input id="lastname_user" class="form_input" type="text" name="lastname_user" required pattern="[A-Za-z' -]+">
             <label class="form_label" for="firstname_user">Prénom : </label>
-                <input id="firstname_user" class="form_input" type="text" name="firstname_user" required>
+                <input id="firstname_user" class="form_input" type="text" name="firstname_user" required pattern="[A-Za-z' -]+">
             <label class="form_label" for="username_user">Pseudo : </label>
-                <input id="username_user" class="form_input" type="text" name="username_user" required>
+                <input id="username_user" class="form_input" type="text" name="username_user" required pattern="[0-9A-Za-z' -]+">
                 <?php
                     if(isset($_GET["error"]) && $_GET["error"]=="name"){
                         echo "<p>Ce nom est déjà utilisé. Veuillez en utiliser un autre.</p>";
@@ -68,12 +68,12 @@
             <label class="form_label" for="email_user">Email : </label>
                 <input id="email_user" class="form_input" type="email" name="email_user" required>
             <label class="form_label" for="mobile_user">Téléphone mobile : </label>
-                <input id="mobile_user" class="form_input" type="tel" name="mobile_user" required>
+                <input id="mobile_user" class="form_input" type="tel" name="mobile_user" required pattern=0[0-9]{9}>
             <!-- Ajouter vérification mobile -->
             <label class="form_label" for="name_city">Ville : </label>
                 <input id="name_city" class="form_input" type="text" name="name_city" required>
             <label class="form_label" for="postcode_city">Code postal : </label>
-                <input id="postcode_city" class="form_input" type="text" name="postcode_city" required>
+                <input id="postcode_city" class="form_input" type="text" name="postcode_city" required pattern=[0-9]{5}>
             <!-- Le code postal n'est pas en chiffres ? -->
             <label class="form_label" for="country_city">Pays : </label>
                 <input id="country_city" class="form_input" type="text" name="country_city" required>

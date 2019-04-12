@@ -3,7 +3,7 @@
 function bdd_connection(){
     $username='root';
     $password='';
-    $database='imac_projet';
+    $database='MotivIMAC';
 
     $pdo =new PDO('mysql:host=localhost;dbname='.$database,$username,$password);
     return $pdo;
