@@ -27,10 +27,10 @@
         
     <form class="form" method="POST" action="<?php echo $root_auth ?>login.php">
         <label class="form_label" for="username_user">Pseudo :</label>
-            <input id="username_user" class="form_input" type="text" name="username_user" placeholder="Pseudo">
+            <input id="username_user" class="form_input" type="text" name="username_user" value="<?php echo (isset($_SESSION['login_username_user']) ? $_SESSION['login_username_user'] : ''); ?>" placeholder="Pseudo">
             <br>
         <label class="form_label" for="password_user">Mot de passe :</label>
-            <input id="password_user" class="form_input" type="password" name="password_user" placeholder="mot de passe">
+            <input id="password_user" class="form_input" type="password" name="password_user" value="<?php echo (isset($_SESSION['login_password_user']) ? $_SESSION['login_password_user'] : ''); ?>" placeholder="mot de passe">
             <br>
         <?php
             if(isset($_GET["error"])){

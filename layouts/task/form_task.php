@@ -33,6 +33,12 @@
             while($row = $result->fetch(PDO::FETCH_ASSOC)){
                 if($row["id_task"]==$_GET["id_task"]){
                     $is_valid = true;
+                    $_SESSION["name_task"]=$row["name_task"];
+                    $_SESSION["description_task"]=$row["description_task"];
+                    $_SESSION["start_task"]=$row["start_task"];
+                    $_SESSION["end_task"]=$row["end_task"];
+                    $_SESSION["id_category"]=$row["id_category"];
+                    $_SESSION["id_difficulty"]=$row["id_difficulty"];
                 }
             }
             if(!$is_valid){
@@ -51,16 +57,16 @@
         }
     ?>
     <label class="form_label" for="name_task">Nom : </label>
-        <input class="form_input" id="name_task" type="text" name="name_task" required>
+        <input class="form_input" id="name_task" type="text" name="name_task" value="<?php echo (isset($_SESSION['name_task']) ? $_SESSION['name_task'] : '') ?>" required>
         <br>
     <label class="form_label" for="description_task">Description : </label>
-    <textarea class="form_input" id="description_task" name="description_task" required></textarea>
+    <textarea class="form_input" id="description_task" name="description_task" required><?php echo (isset($_SESSION['description_task']) ? $_SESSION['description_task'] : ''); ?></textarea>
     <br>
     <label class="form_label" for="start_task">Date de début : </label>
-        <input class="form_input" id="start_task" type="date" name="start_task" required>
+        <input class="form_input" id="start_task" type="date" name="start_task" value="<?php echo (isset($_SESSION['start_task']) ? $_SESSION['start_task'] : ''); ?>" required>
     <br>
-    <label class="form_label" for="end_task">Date de fin : </label>
-        <input class="form_input" id="end_task" type="date" name="end_task" required>
+    <label class="form_label" for="end_task">Date de début : </label>
+        <input class="form_input" id="end_task" type="date" name="end_task" value="<?php echo (isset($_SESSION['end_task']) ? $_SESSION['end_task'] : ''); ?>" required>
         <br>
     <label class="form_label" for="id_difficulty">Difficulté : </label>
         <select class="form_input" name='id_difficulty' required>
