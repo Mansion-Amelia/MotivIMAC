@@ -76,15 +76,6 @@
             <label class="form_label" for="mobile_user">Téléphone mobile : </label>
                 <input id="mobile_user" class="form_input" type="tel" name="mobile_user" value="<?php echo (isset($_SESSION['mobile_user']) ? $_SESSION['mobile_user'] : ''); ?>" required pattern=0[0-9]{9}>
 
-            <!-- Ajouter vérification mobile -->
-            <label class="form_label" for="name_city">Ville : </label>
-                <input id="name_city" class="form_input" type="text" name="name_city" value="<?php echo (isset($_SESSION['name_city']) ? $_SESSION['name_city'] : ''); ?>" required>
-            <label class="form_label" for="postcode_city">Code postal : </label>
-                <input id="postcode_city" class="form_input" type="text" name="postcode_city" value="<?php echo (isset($_SESSION['postcode_city']) ? $_SESSION['postcode_city'] : ''); ?>" required pattern=[0-9]{5}>
-
-            <!-- Le code postal n'est pas en chiffres ? -->
-            <label class="form_label" for="country_city">Pays : </label>
-                <input id="country_city" class="form_input" type="text" name="country_city" value="<?php echo (isset($_SESSION['country_city']) ? $_SESSION['country_city'] : ''); ?>" required>
         </fieldset>
         <button class="form_btn" type="submit">Valider</button>
     </form>

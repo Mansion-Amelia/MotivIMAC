@@ -29,10 +29,7 @@
             $_SESSION["mobile_user"]=NULL;
             $_SESSION["username_user"]=NULL;
             $_SESSION["password_user"]=NULL;
-            $_SESSION["id_universe"]=NULL;
-            $_SESSION["name_city"]=NULL;
-            $_SESSION["postcode_city"]=NULL;
-            $_SESSION["country_city"]=NULL;*/
+            $_SESSION["id_universe"]=NULL;*/
             ?>
             <p class="text center">Votre inscription a bien été prise en compte !</p>
             <?php
