@@ -54,11 +54,14 @@ function create_task(){
         $_SESSION["id_category"]=$_POST["id_category"];
         $_SESSION["id_difficulty"]=$_POST["id_difficulty"];
         
-        $requete = 'INSERT INTO task VALUES (NULL,"'.$_POST['name_task'].'","'.$_POST['description_task'].'","'.$_POST['start_task'].'","'.$_POST['end_task'].'","'.$_POST['id_category'].'","'.$_POST['id_difficulty'].'","'.$id.'")';
-        $pdo->exec($requete) or die ($requete." fail. <a href='form_task.php'>Retry</a>");
-        
-        return TRUE;
-
+        if($_POST["start_task"]<$_POST["end_task"]){
+            $requete = 'INSERT INTO task VALUES (NULL,"'.$_POST['name_task'].'","'.$_POST['description_task'].'","'.$_POST['start_task'].'","'.$_POST['end_task'].'","'.$_POST['id_category'].'","'.$_POST['id_difficulty'].'","'.$id.'")';
+            $pdo->exec($requete) or die ($requete." fail. <a href='form_task.php'>Retry</a>");
+            return TRUE;
+        }
+        else
+            echo "<p>La tâche n'a pas pu être créée : la date de début ne peut pas être ultérieure à la date de fin</p>";
+            return FALSE;
     }else{
         return FALSE;
     }

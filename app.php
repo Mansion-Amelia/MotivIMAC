@@ -2,8 +2,8 @@
 
     // Roots
     $server="http://localhost/";
-    $link="C:\wamp64\www\_habitica\MotivIMAC/";
-    $root = $server."_habitica\MotivIMAC/";
+    $link="C:\wamp64\www\MotivIMAC/";
+    $root = $server."MotivIMAC/";
 
     $root_app = $root."app/";
     $root_auth = $root."app/auth/";
