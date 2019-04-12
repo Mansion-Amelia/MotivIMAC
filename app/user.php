@@ -16,18 +16,26 @@ function read_user(){
     $id_user=$_SESSION["id"];
     $pdo = bdd_connection();
     
-    $request= "SELECT * FROM user,universe,city
+    $request= "SELECT * FROM user,universe,city,level
     WHERE user.id_user='".$id_user."'
     AND user.id_city=city.id_city
-    AND user.id_universe=universe.id_universe";
+    AND user.id_universe=universe.id_universe
+    AND universe.id_universe=level.id_universe
+    AND level.max_level>user.finalscore_user
+    AND level.min_level<=user.finalscore_user";
     $result = $pdo->query($request) or die (print_r($pdo->errorInfo())."Erreur : la requête a échoué.");
 
     if($result->rowCount()<1){
         echo ("Erreur : aucun utilisateur trouvé.");
     }else{
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
-            
+            $percent =($row["finalscore_user"]-$row["min_level"])/($row["max_level"]-$row["min_level"])*100;
             echo <<<HTML
+            <div>Niveau : {$row["name_level"]}</div>
+            <div class="progress" style="width: 25%;">
+              <div class="progress-bar" role="progressbar" style="width: {$percent}%;" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
+            </div>
+            <div>Description : {$row["description_level"]}</div>
             <table class="table">
                 <tr>
                     <th class="table_item">Nom</th>
@@ -77,6 +85,19 @@ function create_user(){
     $pdo = bdd_connection();
 
     if(isset($_POST["lastname_user"], $_POST["firstname_user"], $_POST["email_user"], $_POST["mobile_user"], $_POST["username_user"], $_POST["password_user"], $_POST["id_universe"], $_POST["name_city"], $_POST["postcode_city"], $_POST["country_city"])){
+        
+        /* Remember the inputs */
+        $_SESSION["lastname_user"]=$_POST["lastname_user"];
+        $_SESSION["firstname_user"]=$_POST["firstname_user"];
+        $_SESSION["email_user"]=$_POST["email_user"];
+        $_SESSION["mobile_user"]=$_POST["mobile_user"];
+        $_SESSION["username_user"]=$_POST["username_user"];
+        $_SESSION["password_user"]=$_POST["password_user"];
+        $_SESSION["id_universe"]=$_POST["id_universe"];
+        $_SESSION["name_city"]=$_POST["name_city"];
+        $_SESSION["postcode_city"]=$_POST["postcode_city"];
+        $_SESSION["country_city"]=$_POST["country_city"];
+        
         $id_city="";
         /* Add city*/
         $request = 'SELECT * FROM city';
@@ -127,10 +148,14 @@ function login_user(){
     $pdo = bdd_connection();
     
     if(isset($_POST["username_user"], $_POST["password_user"])){
+        /* Remember the inputs */
+        $_SESSION["login_username_user"]=$_POST["username_user"];
+        $_SESSION["login_password_user"]=$_POST["password_user"];
+        
         $request= "SELECT * FROM user";
         $result = $pdo->query($request);
 
-        $id_user = null;
+        $id_user = NULL;
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             if($row["username_user"]==$_POST["username_user"]){
                 if(password_verify($_POST["password_user"], $row["password_user"])){
@@ -144,7 +169,7 @@ function login_user(){
         if($id_user==NULL){
             redirect("form_login.php?error=true");
             return FALSE;
-        }else{
+        }else{            
             return TRUE;
         }
     }else{
@@ -154,6 +179,7 @@ function login_user(){
 
 function logout_user(){
     if(is_connected()){
+        $_SESSION['id']=NULL;
         session_destroy();
     }
     return TRUE;

@@ -46,6 +46,14 @@ function create_task(){
     }
 
     if(isset($_POST["name_task"], $_POST["description_task"], $_POST["start_task"], $_POST["end_task"], $_POST["id_category"], $_POST["id_difficulty"])){
+        /* Remember the inputs */
+        $_SESSION["name_task"]=$_POST["name_task"];
+        $_SESSION["description_task"]=$_POST["description_task"];
+        $_SESSION["start_task"]=$_POST["start_task"];
+        $_SESSION["end_task"]=$_POST["end_task"];
+        $_SESSION["id_category"]=$_POST["id_category"];
+        $_SESSION["id_difficulty"]=$_POST["id_difficulty"];
+        
         $requete = 'INSERT INTO task VALUES (NULL,"'.$_POST['name_task'].'","'.$_POST['description_task'].'","'.$_POST['start_task'].'","'.$_POST['end_task'].'","'.$_POST['id_category'].'","'.$_POST['id_difficulty'].'","'.$id.'")';
         $pdo->exec($requete) or die ($requete." fail. <a href='form_task.php'>Retry</a>");
         
@@ -82,8 +90,38 @@ function delete_task($id_task){
         $id = $_SESSION["id"];
     }
     
+    // Get points linked to the task, deadline of the task, actual user score
+    $points = 0;
+    $deadline;
+    $actualscore;
+    $request= "SELECT *
+    FROM difficulty,task,user
+    WHERE task.id_task='".$id_task."'
+    AND user.id_user='".$id."'
+    AND task.id_user='".$id."'
+    AND task.id_difficulty=difficulty.id_difficulty";
+    $result = $pdo->query($request) or die (print_r($pdo->errorInfo())."Erreur : la connexion a échoué.");
+    foreach ($result as $row) {
+        $points = $row["score_difficulty"];
+        $deadline = $row["end_task"];
+        $actualscore = $row["finalscore_user"];
+    }
+    
+    // Update user XP (if deadline>today or not)
+    $today = date("Y-m-d H:i:s");
+    if($today < $deadline){
+        $request = 'UPDATE user SET finalscore_user="'.($actualscore+$points).'"
+        WHERE id_user='.$id;
+        $pdo->exec($request) or die ($request." fail. <a href='read_task.php'>Retour aux tâches</a>");
+    }else{
+        $request = 'UPDATE user SET finalscore_user="'.($actualscore-$points).'"
+        WHERE id_user='.$id;
+        $pdo->exec($request) or die ($request." fail. <a href='read_task.php'>Retour aux tâches</a>");
+    }//strtotime
+    
+    // Delete task
     $requete = 'DELETE FROM task WHERE id_task='.$id_task;
-    $pdo->exec($requete) or die ($requete." fail. <a href='form_task.php?id=".$id_task."'>Retry</a>");
+    $pdo->exec($requete) or die ($requete." fail. <a href='read_task.php'>Retour aux tâches</a>");
         
     return TRUE;
 }

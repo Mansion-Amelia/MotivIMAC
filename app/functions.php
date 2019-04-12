@@ -3,9 +3,10 @@
 function bdd_connection(){
     $username='root';
     $password='';
-    $database='imac_projet';
+    $database='habitica2';
 
     $pdo =new PDO('mysql:host=localhost;dbname='.$database,$username,$password);
+    $pdo->exec("SET NAMES utf8");
     return $pdo;
 }
 
@@ -28,8 +29,8 @@ function generate_html_page($title, $content, $links){
     <!DOCTYPE html>
     <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="text/html">
         <title>{$title}</title>
         <meta name="description" content="IMAC1 - ProgWeb (PHP) - TD01 - FilRouge">
         {$links}
@@ -46,6 +47,7 @@ HTML;
 
 function redirect($url) {
     header("location: " . $url);
+    die();
 }
 
 ?>
