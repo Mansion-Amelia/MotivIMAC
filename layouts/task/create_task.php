@@ -26,7 +26,7 @@
             <?php
         }else{
             ?>
-            <p class="text-center"><a href='".$root_task."form_task.php'>Nouvelle tâche</a></p>
+            <p class="text-center"><a href='<?php echo $root_task ?>form_task.php'>Nouvelle tâche</a></p>
             <?php
         }    
     ?>

@@ -29,10 +29,32 @@ function read_task(){
                 Difficulté: " . $row["name_difficulty"]. "</li>
                 <div class='board_btns'>
                 <a class='board_btn info' href='form_task.php?id_task=".$row["id_task"]."'>Modifier</a>
-                <a class='board_btn danger' href='delete_task.php?id_task=".$row["id_task"]."&name_task=".$row["name_task"]."'>Supprimer</a>
+                <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#task_popup' data-id='".$row["id_task"]."' data-name='".$row["name_task"]."'>
+                  Supprimer
+                </button>                
                 </div>";
         }
         echo "</ul>";
+        echo "<!-- Modal -->
+            <div class='modal fade' id='task_popup' tabindex='-1' role='dialog' aria-labelledby='task_popup_label' aria-hidden='true'>
+              <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h5 class='modal-title' id='task_popup_label'>Supprimer une tâche</h5>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                      <span aria-hidden='true'>&times;</span>
+                    </button>
+                  </div>
+                  <div class='modal-body'>
+                    Traitement en cours...
+                  </div>
+                  <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Annuler</button>
+                    <a class='board_btn danger' href=''>Supprimer</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
     }
 }
 
@@ -113,13 +135,18 @@ function delete_task($id_task){
     // Update user XP (if deadline>today or not)
     $today = date("Y-m-d H:i:s");
     if($today < $deadline){
-        $request = 'UPDATE user SET finalscore_user="'.($actualscore+$points).'"
+        $finalscore = $actualscore+$points;
+        $request = 'UPDATE user SET finalscore_user='.$finalscore.'
         WHERE id_user='.$id;
-        $pdo->exec($request) or die ($request." fail. <a href='read_task.php'>Retour aux tâches</a>");
+        $pdo->exec($request);
     }else{
-        $request = 'UPDATE user SET finalscore_user="'.($actualscore-$points).'"
+        $finalscore = $actualscore-$points;
+        if($finalscore<0){
+            $finalscore = 0;
+        }
+        $request = 'UPDATE user SET finalscore_user='.$finalscore.'
         WHERE id_user='.$id;
-        $pdo->exec($request) or die ($request." fail. <a href='read_task.php'>Retour aux tâches</a>");
+        $pdo->exec($request);
     }//strtotime
     
     // Delete task
