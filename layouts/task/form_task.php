@@ -74,7 +74,11 @@
                 $request = 'SELECT * FROM difficulty';
                 $result = $pdo->query($request) or die ("Requete fail. <a href='".$root_task."form_task.php'>Retry</a>");
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                    echo "<option value=".$row["id_difficulty"].">".$row["name_difficulty"]."</option><br>";
+                    if($row['id_difficulty']==$_SESSION["id_difficulty"]){
+                        echo "<option value=".$row["id_difficulty"]." selected='selected'>".$row["name_difficulty"]."</option><br>";
+                    }else{
+                        echo "<option value=".$row["id_difficulty"].">".$row["name_difficulty"]."</option><br>";
+                    }
                 }
             ?>
         </select>
@@ -85,7 +89,11 @@
                 $request = 'SELECT * FROM category';
                 $result = $pdo->query($request) or die ("Requete fail. <a href='".$root_task."form_task.php'>Retry</a>");
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                    echo "<option value=".$row["id_category"].">".$row["name_category"]."</option><br>";
+                    if($row['id_category']==$_SESSION["id_category"]){
+                        echo "<option value=".$row["id_category"]." selected='selected'>".$row["name_category"]."</option><br>";
+                    }else{
+                        echo "<option value=".$row["id_category"].">".$row["name_category"]."</option><br>";
+                    }
                 }
             ?>
         </select>

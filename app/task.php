@@ -29,7 +29,7 @@ function read_task(){
                 Difficulté: " . $row["name_difficulty"]. "</li>
                 <div class='board_btns'>
                 <a class='board_btn info' href='form_task.php?id_task=".$row["id_task"]."'>Modifier</a>
-                <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#task_popup' data-id='".$row["id_task"]."' data-name='".$row["name_task"]."'>
+                <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#task_popup' data-id='".$row["id_task"]."' data-name='".$row["name_task"]."'>
                   Supprimer
                 </button>                
                 </div>";
