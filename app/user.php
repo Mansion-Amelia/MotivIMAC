@@ -106,7 +106,7 @@ function create_user(){
                 redirect("form_user.php?error=name");
             }
         }
-        $request = 'INSERT INTO user VALUES (NULL,"'.$_POST['lastname_user'].'","'.$_POST['firstname_user'].'","'.$_POST['email_user'].'","'.$_POST['mobile_user'].'","'.$_POST['username_user'].'","'.password_hash($_POST['password_user'], PASSWORD_BCRYPT).'",0,"'.$_POST['id_universe'].'",NULL,"'.$_POST['hair_color'].'","'.$_POST['skin_color'].'","'.$_POST['top_color'].'","'.$_POST['bottom_color'].'","'.$_POST['hair_style'].'")';
+        $request = 'INSERT INTO user VALUES (NULL,"'.$_POST['lastname_user'].'","'.$_POST['firstname_user'].'","'.$_POST['email_user'].'","'.$_POST['mobile_user'].'","'.$_POST['username_user'].'","'.password_hash($_POST['password_user'], PASSWORD_BCRYPT).'",0,"'.$_POST['id_universe'].'","'.$_POST['hair_color'].'","'.$_POST['skin_color'].'","'.$_POST['top_color'].'","'.$_POST['bottom_color'].'","'.$_POST['hair_style'].'")';
         $pdo->exec($request) or die (print_r($pdo->errorInfo()).$request." fail. <a href='form_user.php'>Retry</a>");
         
         return TRUE;
