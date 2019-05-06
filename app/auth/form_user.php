@@ -80,7 +80,7 @@
         
         <fieldset>
             <legend class="form_legend">Avatar</legend>
-            <div class="chara worry">
+            <div class="chara worry <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>">
                     <?php
                         include($link_partials.'chara.php');
                     ?>
@@ -106,27 +106,43 @@
               <div class="tab-pane fade show active" id="v-pills-skin_color" role="tabpanel" aria-labelledby="v-pills-skin_color-tab">
                     <div class="form_column">
                     <label for="skin_color" class="form_label">Couleur peau :</label>
-                    <input type="color" id="skin_color" name="skin_color" data-change="chara_body--armL1 chara_body--armL2 chara_body--armR1 chara_body--armR2 chara_head" value="#dcdbdb" required>
+                    <input type="color" id="skin_color" name="skin_color" data-change="chara_body--armL1 chara_body--armL2 chara_body--armR1 chara_body--armR2 chara_head" value="<?php if(isset($_SESSION['skin_color'])){
+                        echo $_SESSION['skin_color'];
+                    }else{
+                        echo '#dcdcdc';
+                    } ?>" required>
                     </div>
               </div>
               <div class="tab-pane fade" id="v-pills-hair_color" role="tabpanel" aria-labelledby="v-pills-hair_color-tab">
                     <div class="form_column">
                     <label for="hair_color" class="form_label">Couleur cheveux :</label>
-                    <input type="color" id="hair_color" name="hair_color" data-change="chara_head--hairShort1 chara_head--hairShort2 chara_head--hairShort3 chara_head--hairShort4 chara_head--hairShort5 chara_head--hairLong1 chara_head--hairLong2 chara_head--hairLong3 chara_head--chignon chara_head--macaronR chara_head--macaronL chara_head--poneyTail chara_head--couetteL chara_head--couetteR chara_head--mustache chara_head--barbe1 chara_head--barbe2 chara_head--frange chara_head--frange2" value="#1a2a3a" required>
+                    <input type="color" id="hair_color" name="hair_color" data-change="chara_head--hairShort1 chara_head--hairShort2 chara_head--hairShort3 chara_head--hairShort4 chara_head--hairShort5 chara_head--hairLong1 chara_head--hairLong2 chara_head--hairLong3 chara_head--chignon chara_head--macaronR chara_head--macaronL chara_head--poneyTail chara_head--couetteL chara_head--couetteR chara_head--mustache chara_head--barbe1 chara_head--barbe2 chara_head--frange chara_head--frange2" value="<?php if(isset($_SESSION['hair_color'])){
+                        echo $_SESSION['hair_color'];
+                    }else{
+                        echo '#1a2a3a';
+                    } ?>" required>
                     </div>                  
                 </div>
                 
               <div class="tab-pane fade" id="v-pills-top_color" role="tabpanel" aria-labelledby="v-pills-top_color-tab">
                 <div class="form_column">
                     <label for="top_color" class="form_label">Couleur haut :</label>
-                    <input type="color" id="top_color" name="top_color" data-change="chara_body--top chara_body--bottom" value="#aaaaaa" required>
+                    <input type="color" id="top_color" name="top_color" data-change="chara_body--top chara_body--bottom" value="<?php if(isset($_SESSION['top_color'])){
+                        echo $_SESSION['top_color'];
+                    }else{
+                        echo '#aaaaaa';
+                    } ?>" required>
                 </div>  
               </div>
                 
               <div class="tab-pane fade" id="v-pills-bottom_color" role="tabpanel" aria-labelledby="v-pills-bottom_color-tab">
                     <div class="form_column">
                     <label for="bottom_color" class="form_label">Couleur bas :</label>
-                    <input type="color" id="bottom_color" name="bottom_color" data-change="chara_body--legL chara_body--legR" value="#777e85" required>
+                    <input type="color" id="bottom_color" name="bottom_color" data-change="chara_body--legL chara_body--legR" value="<?php if(isset($_SESSION['bottom_color'])){
+                        echo $_SESSION['bottom_color'];
+                    }else{
+                        echo '#777e85';
+                    } ?>" required>
                     </div>
                 </div>
                 
@@ -135,23 +151,33 @@
                     <p class="form_label">Cheveux courts :</p>
                         <div>
                             <input type="checkbox" id="hairShort1" name="hairShort1"
-                             checked>
+                             <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairShort1') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairShort1" class="form_label">Court 1</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairShort2" name="hairShort2">
+                            <input type="checkbox" id="hairShort2" name="hairShort2" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairShort2') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairShort2" class="form_label">Court 2</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairShort3" name="hairShort3">
+                            <input type="checkbox" id="hairShort3" name="hairShort3" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairShort3') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairShort3" class="form_label">Court 3</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairShort4" name="hairShort4">
+                            <input type="checkbox" id="hairShort4" name="hairShort4" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairShort4') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairShort4" class="form_label">Court 4</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairShort5" name="hairShort5">
+                            <input type="checkbox" id="hairShort5" name="hairShort5" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairShort5') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairShort5" class="form_label">Court 5</label>
                         </div>
                     </div>
@@ -161,15 +187,21 @@
                   <div class="form_column">
                     <p class="form_label">Cheveux longs :</p>
                         <div>
-                            <input type="checkbox" id="hairLong1" name="hairLong1">
+                            <input type="checkbox" id="hairLong1" name="hairLong1" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairLong1') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairLong1" class="form_label">Long 1</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairLong2" name="hairLong2">
+                            <input type="checkbox" id="hairLong2" name="hairLong2" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairLong2') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairLong2" class="form_label">Long 2</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="hairLong3" name="hairLong3">
+                            <input type="checkbox" id="hairLong3" name="hairLong3" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'hairLong3') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="hairLong3" class="form_label">Long 3</label>
                         </div>
                     </div>  
@@ -179,11 +211,15 @@
                   <div class="form_column">
                     <p class="form_label">Frange :</p>
                         <div>
-                            <input type="checkbox" id="frange" name="frange">
+                            <input type="checkbox" id="frange" name="frange" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'frange') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="frange" class="form_label">Frange 1</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="frange2" name="frange2">
+                            <input type="checkbox" id="frange2" name="frange2" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'frange2') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="frange2" class="form_label">Frange 2</label>
                         </div>
                     </div>  
@@ -193,27 +229,39 @@
                 <div class="form_column">
                 <p class="form_label">Coiffure :</p>
                     <div>
-                        <input type="checkbox" id="chignon" name="chignon">
+                        <input type="checkbox" id="chignon" name="chignon" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'chignon') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="chignon" class="form_label">Macaron centre</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="macaronL" name="macaronL">
+                        <input type="checkbox" id="macaronL" name="macaronL" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'macaronL') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="macaronL" class="form_label">Macaron gauche</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="macaronR" name="macaronR">
+                        <input type="checkbox" id="macaronR" name="macaronR" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'macaronR') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="macaronR" class="form_label">Macaron droite</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="poneyTail" name="poneyTail">
+                        <input type="checkbox" id="poneyTail" name="poneyTail" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'poneyTail') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="poneyTail" class="form_label">Queue de cheval</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="couetteL" name="couetteL">
+                        <input type="checkbox" id="couetteL" name="couetteL" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'couetteL') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="couetteL" class="form_label">Couette gauche</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="couetteR" name="couetteR">
+                        <input type="checkbox" id="couetteR" name="couetteR" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'couetteR') !== false){
+                        echo 'checked';
+                    } ?>>
                         <label for="couetteR" class="form_label">Couette droite</label>
                     </div>
                 </div>
@@ -223,15 +271,21 @@
                   <div class="form_column">
                     <p class="form_label">Poils :</p>
                         <div>
-                            <input type="checkbox" id="mustache" name="mustache">
+                            <input type="checkbox" id="mustache" name="mustache" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'mustache') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="mustache" class="form_label">Moustache</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="barbe1" name="barbe1">
+                            <input type="checkbox" id="barbe1" name="barbe1" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'barbe1') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="barbe1" class="form_label">Barbe 1</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="barbe2" name="barbe2">
+                            <input type="checkbox" id="barbe2" name="barbe2" <?php if(isset($_SESSION['hair_style']) && strpos($_SESSION['hair_style'], 'barbe2') !== false){
+                        echo 'checked';
+                    } ?>>
                             <label for="barbe2" class="form_label">Barbe 2</label>
                         </div>
                     </div>  
@@ -240,7 +294,9 @@
             </div>
             </div> 
             </div>
-            <textarea id="hair_style" name="hair_style"></textarea>
+            <textarea id="hair_style" name="hair_style" hidden>
+                <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>
+            </textarea>
         </fieldset>
         <button class="form_btn" type="submit">Valider</button>
     </form>
@@ -271,9 +327,8 @@
         function writeClasses(inputs){
             $("#hair_style").val("");
             classes = "";
-            console.log(inputs);
                 inputs.each(function(key, input){
-                    console.log(input);
+                    //console.log(input);
                     el = input.id;
                     classes += " "+el;
                     classes = classes.substring(1,classes.length);
@@ -285,6 +340,7 @@
         var expression = ["tears1", "tears2", "transpi1", "transpi2", "waves"];
         var pose = ["wonder", "fight", "success", "victory", "defend", "hanche", "weird", "shocked", "tired"];
         $(document).ready(function(){
+            //writeClasses($("#form_chara input:checked"));
             $("#form_chara input").each(function(){
                 checkChara($(this));
             });

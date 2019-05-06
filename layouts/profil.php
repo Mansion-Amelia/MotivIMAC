@@ -22,7 +22,7 @@
         <br>
         <br>
         <br>
-        <div class="chara worry">
+        <div class="chara worry <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>">
             <?php
                 include($link_partials.'chara.php');
             ?>

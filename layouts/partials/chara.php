@@ -1,4 +1,4 @@
-<div class="chara_body <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>">
+<div class="chara_body">
     <div class="chara_head--hairLong1">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 131.295 124.947" enable-background="new 0 0 131.295 124.947"
 xml:space="preserve">
