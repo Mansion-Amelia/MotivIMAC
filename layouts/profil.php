@@ -18,6 +18,15 @@
     <main class="main">
         
     <h1 class="title">Votre profil</h1>
+        
+        <br>
+        <br>
+        <br>
+        <div class="chara worry">
+            <?php
+                include($link_partials.'chara.php');
+            ?>
+        </div>
     <?php
         require_once($link_app.'user.php');
         require_once($link_app.'task.php');

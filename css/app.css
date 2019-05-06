@@ -223,3 +223,22 @@ html,body{
     background: var(--primary);
 }
 
+.form_row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.form_column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 33.33%;
+    max-height: 20rem;
+    padding: 10px;
+}
+
+.nav-pills{
+    padding: 10px;
+}

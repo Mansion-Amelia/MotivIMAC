@@ -79,7 +79,7 @@ function create_user(){
     
     $pdo = bdd_connection();
 
-    if(isset($_POST["lastname_user"], $_POST["firstname_user"], $_POST["email_user"], $_POST["mobile_user"], $_POST["username_user"], $_POST["password_user"], $_POST["id_universe"])){
+    if(isset($_POST["lastname_user"], $_POST["firstname_user"], $_POST["email_user"], $_POST["mobile_user"], $_POST["username_user"], $_POST["password_user"], $_POST["id_universe"], $_POST["skin_color"], $_POST["hair_color"], $_POST["top_color"], $_POST["bottom_color"])){
         
         /* Remember the inputs */
         $_SESSION["lastname_user"]=$_POST["lastname_user"];
@@ -89,6 +89,14 @@ function create_user(){
         $_SESSION["username_user"]=$_POST["username_user"];
         $_SESSION["password_user"]=$_POST["password_user"];
         $_SESSION["id_universe"]=$_POST["id_universe"];
+        $_SESSION["skin_color"]=$_POST["skin_color"];
+        $_SESSION["hair_color"]=$_POST["hair_color"];
+        $_SESSION["top_color"]=$_POST["top_color"];
+        $_SESSION["bottom_color"]=$_POST["bottom_color"];
+        
+        if(isset($_POST["hair_style"])){
+            $_SESSION["hair_style"]=$_POST["hair_style"];
+        }
         
         /* Add user */
         $request = 'SELECT * FROM user';
@@ -98,8 +106,8 @@ function create_user(){
                 redirect("form_user.php?error=name");
             }
         }
-        $request = 'INSERT INTO user VALUES (NULL,"'.$_POST['lastname_user'].'","'.$_POST['firstname_user'].'","'.$_POST['email_user'].'","'.$_POST['mobile_user'].'","'.$_POST['username_user'].'","'.password_hash($_POST['password_user'], PASSWORD_BCRYPT).'",0,"'.$_POST['id_universe'].'")';
-        $pdo->exec($request) or die ($request." fail. <a href='form_user.php'>Retry</a>");
+        $request = 'INSERT INTO user VALUES (NULL,"'.$_POST['lastname_user'].'","'.$_POST['firstname_user'].'","'.$_POST['email_user'].'","'.$_POST['mobile_user'].'","'.$_POST['username_user'].'","'.password_hash($_POST['password_user'], PASSWORD_BCRYPT).'",0,"'.$_POST['id_universe'].'",NULL,"'.$_POST['hair_color'].'","'.$_POST['skin_color'].'","'.$_POST['top_color'].'","'.$_POST['bottom_color'].'","'.$_POST['hair_style'].'")';
+        $pdo->exec($request) or die (print_r($pdo->errorInfo()).$request." fail. <a href='form_user.php'>Retry</a>");
         
         return TRUE;
 
@@ -127,6 +135,11 @@ function login_user(){
                     $id_user=$row["id_user"];
                     $_SESSION["id"]=$row["id_user"];
                     $_SESSION["name"]=$row["username_user"];
+                    $_SESSION["skin_color"]=$row["skin_color_user"];
+                    $_SESSION["hair_color"]=$row["hair_color_user"];
+                    $_SESSION["top_color"]=$row["top_color_user"];
+                    $_SESSION["bottom_color"]=$row["bottom_color_user"];
+                    $_SESSION["hair_style"]=$row["hair_style_user"];
                 }
             }
         }

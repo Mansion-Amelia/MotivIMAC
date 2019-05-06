@@ -77,8 +77,241 @@
                 <input id="mobile_user" class="form_input" type="tel" name="mobile_user" value="<?php echo (isset($_SESSION['mobile_user']) ? $_SESSION['mobile_user'] : ''); ?>" required pattern=0[0-9]{9}>
 
         </fieldset>
+        
+        <fieldset>
+            <legend class="form_legend">Avatar</legend>
+            <div class="chara worry">
+                    <?php
+                        include($link_partials.'chara.php');
+                    ?>
+                </div>
+            <div id="form_chara" class="row">
+                <div class="col-5">
+                    
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-skin_color-tab" data-toggle="pill" href="#v-pills-skin_color" role="tab" aria-controls="v-pills-skin_color" aria-selected="true">Couleur peau</a>
+                <a class="nav-link" id="v-pills-hair_color-tab" data-toggle="pill" href="#v-pills-hair_color" role="tab" aria-controls="v-pills-hair_color" aria-selected="false">Couleur cheveux</a>
+                <a class="nav-link" id="v-pills-top_color-tab" data-toggle="pill" href="#v-pills-top_color" role="tab" aria-controls="v-pills-top_color" aria-selected="false">Couleur haut</a>
+                <a class="nav-link" id="v-pills-bottom_color-tab" data-toggle="pill" href="#v-pills-bottom_color" role="tab" aria-controls="v-pills-bottom_color" aria-selected="false">Couleur bas</a>
+                <a class="nav-link" id="v-pills-hairShort-tab" data-toggle="pill" href="#v-pills-hairShort" role="tab" aria-controls="v-pills-hairShort" aria-selected="false">Cheveux courts</a>
+                <a class="nav-link" id="v-pills-hairLong-tab" data-toggle="pill" href="#v-pills-hairLong" role="tab" aria-controls="v-pills-hairLong" aria-selected="false">Cheveux longs</a>
+                <a class="nav-link" id="v-pills-frange-tab" data-toggle="pill" href="#v-pills-frange" role="tab" aria-controls="v-pills-frange" aria-selected="false">Frange</a>
+                <a class="nav-link" id="v-pills-hairAdd-tab" data-toggle="pill" href="#v-pills-hairAdd" role="tab" aria-controls="v-pills-hairAdd" aria-selected="false">Coiffure</a>
+                <a class="nav-link" id="v-pills-hairFace-tab" data-toggle="pill" href="#v-pills-hairFace" role="tab" aria-controls="v-pills-hairFace" aria-selected="false">Poils</a>
+            </div>
+            </div>
+                
+            <div class="col-5">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-skin_color" role="tabpanel" aria-labelledby="v-pills-skin_color-tab">
+                    <div class="form_column">
+                    <label for="skin_color" class="form_label">Couleur peau :</label>
+                    <input type="color" id="skin_color" name="skin_color" data-change="chara_body--armL1 chara_body--armL2 chara_body--armR1 chara_body--armR2 chara_head" value="#dcdbdb" required>
+                    </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-hair_color" role="tabpanel" aria-labelledby="v-pills-hair_color-tab">
+                    <div class="form_column">
+                    <label for="hair_color" class="form_label">Couleur cheveux :</label>
+                    <input type="color" id="hair_color" name="hair_color" data-change="chara_head--hairShort1 chara_head--hairShort2 chara_head--hairShort3 chara_head--hairShort4 chara_head--hairShort5 chara_head--hairLong1 chara_head--hairLong2 chara_head--hairLong3 chara_head--chignon chara_head--macaronR chara_head--macaronL chara_head--poneyTail chara_head--couetteL chara_head--couetteR chara_head--mustache chara_head--barbe1 chara_head--barbe2 chara_head--frange chara_head--frange2" value="#1a2a3a" required>
+                    </div>                  
+                </div>
+                
+              <div class="tab-pane fade" id="v-pills-top_color" role="tabpanel" aria-labelledby="v-pills-top_color-tab">
+                <div class="form_column">
+                    <label for="top_color" class="form_label">Couleur haut :</label>
+                    <input type="color" id="top_color" name="top_color" data-change="chara_body--top chara_body--bottom" value="#aaaaaa" required>
+                </div>  
+              </div>
+                
+              <div class="tab-pane fade" id="v-pills-bottom_color" role="tabpanel" aria-labelledby="v-pills-bottom_color-tab">
+                    <div class="form_column">
+                    <label for="bottom_color" class="form_label">Couleur bas :</label>
+                    <input type="color" id="bottom_color" name="bottom_color" data-change="chara_body--legL chara_body--legR" value="#777e85" required>
+                    </div>
+                </div>
+                
+              <div class="tab-pane fade" id="v-pills-hairShort" role="tabpanel" aria-labelledby="v-pills-hairShort-tab">
+                    <div class="form_column">
+                    <p class="form_label">Cheveux courts :</p>
+                        <div>
+                            <input type="checkbox" id="hairShort1" name="hairShort1"
+                             checked>
+                            <label for="hairShort1" class="form_label">Court 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairShort2" name="hairShort2">
+                            <label for="hairShort2" class="form_label">Court 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairShort3" name="hairShort3">
+                            <label for="hairShort3" class="form_label">Court 3</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairShort4" name="hairShort4">
+                            <label for="hairShort4" class="form_label">Court 4</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairShort5" name="hairShort5">
+                            <label for="hairShort5" class="form_label">Court 5</label>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="tab-pane fade" id="v-pills-hairLong" role="tabpanel" aria-labelledby="v-pills-hairLong-tab">
+                  <div class="form_column">
+                    <p class="form_label">Cheveux longs :</p>
+                        <div>
+                            <input type="checkbox" id="hairLong1" name="hairLong1">
+                            <label for="hairLong1" class="form_label">Long 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairLong2" name="hairLong2">
+                            <label for="hairLong2" class="form_label">Long 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hairLong3" name="hairLong3">
+                            <label for="hairLong3" class="form_label">Long 3</label>
+                        </div>
+                    </div>  
+              </div>
+                
+              <div class="tab-pane fade" id="v-pills-frange" role="tabpanel" aria-labelledby="v-pills-frange-tab">
+                  <div class="form_column">
+                    <p class="form_label">Frange :</p>
+                        <div>
+                            <input type="checkbox" id="frange" name="frange">
+                            <label for="frange" class="form_label">Frange 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="frange2" name="frange2">
+                            <label for="frange2" class="form_label">Frange 2</label>
+                        </div>
+                    </div>  
+              </div>
+                
+              <div class="tab-pane fade" id="v-pills-hairAdd" role="tabpanel" aria-labelledby="v-pills-hairAdd-tab">
+                <div class="form_column">
+                <p class="form_label">Coiffure :</p>
+                    <div>
+                        <input type="checkbox" id="chignon" name="chignon">
+                        <label for="chignon" class="form_label">Macaron centre</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="macaronL" name="macaronL">
+                        <label for="macaronL" class="form_label">Macaron gauche</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="macaronR" name="macaronR">
+                        <label for="macaronR" class="form_label">Macaron droite</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="poneyTail" name="poneyTail">
+                        <label for="poneyTail" class="form_label">Queue de cheval</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="couetteL" name="couetteL">
+                        <label for="couetteL" class="form_label">Couette gauche</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="couetteR" name="couetteR">
+                        <label for="couetteR" class="form_label">Couette droite</label>
+                    </div>
+                </div>
+              </div>
+                
+              <div class="tab-pane fade" id="v-pills-hairFace" role="tabpanel" aria-labelledby="v-pills-hairFace-tab">
+                  <div class="form_column">
+                    <p class="form_label">Poils :</p>
+                        <div>
+                            <input type="checkbox" id="mustache" name="mustache">
+                            <label for="mustache" class="form_label">Moustache</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="barbe1" name="barbe1">
+                            <label for="barbe1" class="form_label">Barbe 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="barbe2" name="barbe2">
+                            <label for="barbe2" class="form_label">Barbe 2</label>
+                        </div>
+                    </div>  
+              </div>
+                
+            </div>
+            </div> 
+            </div>
+            <textarea id="hair_style" name="hair_style"></textarea>
+        </fieldset>
         <button class="form_btn" type="submit">Valider</button>
     </form>
     </main>
+    
+    <script>
+        function checkChara(input){
+            if(input.attr("type") == "color"){
+                color = input.val();
+                el = input.attr("data-change");
+                el = el.split(" ");
+
+                el.forEach(function(item){
+                    item = "."+item;
+                    $(item).children("svg").children("path").attr("fill", color);
+                    $(item).children("svg").children("ellipse").attr("fill", color);
+                    
+                })
+            }else if(input.attr("type") == "checkbox"){
+                el = input.attr("id");
+                if(input.prop("checked")){
+                    $('.chara').addClass(el);
+                }else{
+                    $('.chara').removeClass(el);
+                }
+            }
+        }
+        function writeClasses(inputs){
+            $("#hair_style").val("");
+            classes = "";
+            console.log(inputs);
+                inputs.each(function(key, input){
+                    console.log(input);
+                    el = input.id;
+                    classes += " "+el;
+                    classes = classes.substring(1,classes.length);
+                }) ;
+                $("#hair_style").val(classes);
+        }
+        
+        var eyes = ["worry", "spiral", "angry", "happy", "arrow", "empty"];
+        var expression = ["tears1", "tears2", "transpi1", "transpi2", "waves"];
+        var pose = ["wonder", "fight", "success", "victory", "defend", "hanche", "weird", "shocked", "tired"];
+        $(document).ready(function(){
+            $("#form_chara input").each(function(){
+                checkChara($(this));
+            });
+            writeClasses($("#form_chara input:checked"));
+            $("#form_chara input").on("change", function(){
+                checkChara($(this));
+                writeClasses($("#form_chara input:checked"));
+            })
+            
+            $(".chara").on("mouseenter", function(){
+                myEyes = eyes[Math.floor(Math.random()*eyes.length)];
+                myExpression = expression[Math.floor(Math.random()*expression.length)];
+                myPose = "pose_"+pose[Math.floor(Math.random()*pose.length)];
+                
+                $('.chara').removeClass("worry")
+                    .addClass(myEyes)
+                    .addClass(myExpression)
+                    .addClass(myPose);
+
+            }).on("mouseleave", function(){
+                $('.chara').removeClass(myEyes)
+                    .removeClass(myExpression)
+                    .removeClass(myPose)
+                    .addClass("worry");
+
+            })
+        })
+    </script>
 </body>
 </html>

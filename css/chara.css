@@ -1,0 +1,1183 @@
+
+.chara{
+    background: transparent;
+    
+    width: 100px;
+    height: 250px;
+    
+    position: relative;
+    
+    margin: auto;
+}
+
+.chara_head{
+    //background-image: url(svg_chara/head.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 200%;
+    height: 220%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: -210%;
+    left: -40%;
+    
+    z-index: 1;
+    
+    transition: all ease 0.2s;
+}
+
+.pose_defend .chara_head{
+    top: -200%;
+    left: -30%;
+    transform: rotate(5deg);
+}
+
+.chara_head--eyesHappy{
+    //background-image: url(svg_chara/eyesHappy.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    width: 70%;
+    height: 20%;
+    
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    
+    display: none;
+}
+
+.happy .chara_head--eyesHappy{
+    display: block;
+}
+
+.chara_head--eyesAngry{
+    //background-image: url(svg_chara/eyesAngry.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 55%;
+    height: 35%;
+    
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    
+    display: none;
+    
+    transform: rotate(-2deg);
+}
+
+.angry .chara_head--eyesAngry{
+    display: block;
+}
+
+.chara_head--eyesWorry{
+    //background-image: url(svg_chara/eyesWorry.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 65%;
+    height: 35%;
+    
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    
+    display: none;
+}
+
+.worry .chara_head--eyesWorry{
+    display: block;
+}
+
+.chara_head--eyesArrow{
+    //background-image: url(svg_chara/eyesArrow.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 60%;
+    height: 30%;
+    
+    position: absolute;
+    top: 47%;
+    left: 10%;
+    
+    display: none;
+}
+
+.arrow .chara_head--eyesArrow{    
+    display: block;
+}
+
+.chara_head--eyesEmpty{
+    //background-image: url(svg_chara/eyesEmpty.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 65%;
+    height: 30%;
+    
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    
+    display: none;
+    
+    transform: rotate(10deg);
+}
+
+.empty .chara_head--eyesEmpty{
+    display: block;
+}
+
+.chara_head--eyesSpiral{
+    //background-image: url(svg_chara/eyesSpiral.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 65%;
+    height: 30%;
+    
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    
+    display: none;
+    
+    transform: rotate(5deg);
+}
+
+.spiral .chara_head--eyesSpiral{
+    display: block;
+}
+
+.chara_head--tears1{
+    //background-image: url(svg_chara/tears1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 15%;
+    height: 15%;
+    
+    position: absolute;
+    top: 65%;
+    left: 65%;
+    
+    opacity: 0;
+    
+    transform: rotate(5deg);
+    transition: all ease 0.2s;
+}
+
+.tears1 .chara_head--tears1{
+    top: 67%;
+    opacity: 1;
+}
+
+.chara_head--tears2{
+    //background-image: url(svg_chara/tears2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 60%;
+    height: 40%;
+    
+    position: absolute;
+    top: 60%;
+    left: 6%;
+    
+    opacity: 0;
+    
+    transform: rotate(7deg);
+    transition: all ease 0.2s;
+}
+
+.tears2 .chara_head--tears2{
+    top: 64%;
+    
+    opacity: 1;
+}
+
+.chara_head--transpi1{
+    //background-image: url(svg_chara/transpi1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 7%;
+    height: 10%;
+    
+    position: absolute;
+    top: 63%;
+    left: 75%;
+    
+    opacity: 0;
+    
+    transform: rotate(0deg);
+    transition: all ease 0.2s;
+}
+
+.transpi1 .chara_head--transpi1{
+    top: 67%;
+    opacity: 1;
+}
+
+.chara_head--transpi2{
+    //background-image: url(svg_chara/transpi2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 10%;
+    height: 15%;
+    
+    position: absolute;
+    top: 45%;
+    left: 75%;
+    
+    opacity: 0;
+    
+    transform: rotate(7deg);
+    transition: all ease 0.2s;
+}
+
+.transpi2 .chara_head--transpi2{
+    top: 50%;
+    opacity: 1;
+}
+
+.chara_head--waves{
+    //background-image: url(svg_chara/waves.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 20%;
+    height: 10%;
+    
+    position: absolute;
+    top: 67%;
+    left: -5%;
+    
+    opacity: 0;
+    
+    transform: rotate(0deg);
+    transition: all ease 0.2s;
+}
+
+.waves .chara_head--waves{
+    top: 70%;
+    
+    opacity: 1;
+}
+
+.chara_head--waves2{
+    //background-image: url(svg_chara/waves.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 20%;
+    height: 10%;
+    
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    
+    opacity: 0;
+    
+    transform: rotate(0deg);
+    transition: all ease 0.2s;
+}
+
+.waves .chara_head--waves2{
+    top: 72%;
+    opacity: 1;
+}
+
+.chara_head--hairShort1{
+    //background-image: url(svg_chara/hairShort1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 97%;
+    height: 100%;
+    
+    position: absolute;
+    top: -5%;
+    left: 2%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.hairShort1 .chara_head--hairShort1{
+    display: block;
+}
+
+.chara_head--hairShort2{
+    //background-image: url(svg_chara/hairShort2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 125%;
+    height: 110%;
+    
+    position: absolute;
+    top: -20%;
+    left: -27%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.hairShort2 .chara_head--hairShort2{
+    display: block;
+}
+
+.chara_head--hairShort3{
+    //background-image: url(svg_chara/hairShort3.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.hairShort3 .chara_head--hairShort3{
+    display: block;
+}
+
+.chara_head--hairShort4{
+    //background-image: url(svg_chara/hairShort4.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 115%;
+    height: 100%;
+    
+    position: absolute;
+    top: -12%;
+    left: -7%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.hairShort4 .chara_head--hairShort4{
+    display: block;
+}
+
+.chara_head--hairShort5{
+    //background-image: url(svg_chara/hairShort5.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 117%;
+    height: 103%;
+    
+    position: absolute;
+    top: -17%;
+    left: -7%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.hairShort5 .chara_head--hairShort5{
+    display: block;
+}
+
+.chara_head--hairLong1{
+    //background-image: url(svg_chara/hairLong1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    
+    width: 130%;
+    height: 100%;
+    
+    position: absolute;
+    top: -90%;
+    left: -15%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    transition: all 0.2s ease;
+    
+    z-index: -2;
+}
+
+.hairLong1 .chara_head--hairLong1{
+    display: block;
+}
+
+.pose_defend .chara_head--hairLong1{
+    left: -27%;
+    top: -85%;
+    transform: rotate(-10deg);
+}
+
+.pose_defend .chara_head--hairLong2{
+    left: -27%;
+    top: -205%;
+    transform: rotate(-10deg);
+}
+
+.pose_defend .chara_head--hairLong3{
+    left: -25%;
+    top: -190%;
+    transform: rotate(-5deg);
+}
+
+.chara_head--hairLong2{
+    //background-image: url(svg_chara/hairLong2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 130%;
+    height: 350%;
+    
+    position: absolute;
+    top: -210%;
+    left: -15%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    
+    transition: all 0.2s ease;
+    
+    z-index: -2;
+}
+
+.hairLong2 .chara_head--hairLong2{
+    display: block;
+}
+
+.chara_head--hairLong3{
+    //background-image: url(svg_chara/hairLong3.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 130%;
+    height: 350%;
+    
+    position: absolute;
+    top: -190%;
+    left: -17%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    transition: all ease 0.2s;
+    
+    z-index: -2;
+}
+
+.hairLong3 .chara_head--hairLong3{
+    display: block;
+}
+
+.chara_head--chignon{
+    //background-image: url(svg_chara/chignon.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 40%;
+    height: 40%;
+    
+    position: absolute;
+    top: -25%;
+    left: 40%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.chignon .chara_head--chignon{
+    display: block;
+}
+
+.chara_head--macaronL{
+    //background-image: url(svg_chara/chignon.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 40%;
+    height: 40%;
+    
+    position: absolute;
+    top: -15%;
+    left: 70%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.macaronL .chara_head--macaronL{
+    display: block;
+}
+
+.chara_head--macaronR{
+    //background-image: url(svg_chara/chignon.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 40%;
+    height: 40%;
+    
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    
+    z-index: -1;
+}
+
+.macaronR .chara_head--macaronR{
+    display: block;
+}
+
+.chara_head--poneyTail{
+    //background-image: url(svg_chara/poneyTail.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 100%;
+    height: 370%;
+    
+    position: absolute;
+    top: -250%;
+    left: 40%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    
+    z-index: -2;
+}
+
+.poneyTail .chara_head--poneyTail{
+    display: block;
+}
+
+.chara_head--couetteL{
+    //background-image: url(svg_chara/couetteL.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 50%;
+    height: 150%;
+    
+    position: absolute;
+    top: -20%;
+    left: 80%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.couetteL .chara_head--couetteL{
+    display: block;
+}
+
+.chara_head--couetteR{
+    //background-image: url(svg_chara/couetteR.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 50%;
+    height: 150%;
+    
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    
+    z-index: -2;
+}
+
+.couetteR .chara_head--couetteR{
+    display: block;
+}
+
+.chara_head--mustache{
+    //background-image: url(svg_chara/mustache.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 50%;
+    height: 17%;
+    
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.mustache .chara_head--mustache{
+    display: block;
+}
+
+.chara_head--barbe1{
+    //background-image: url(svg_chara/barbe1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 88%;
+    height: 27%;
+    
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+    
+    z-index: 1;
+}
+
+.barbe1 .chara_head--barbe1{
+    display: block;
+}
+
+.chara_head--barbe2{
+    //background-image: url(svg_chara/barbe2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 57%;
+    height: 35%;
+    
+    position: absolute;
+    top: 83%;
+    left: 2%;
+    
+    display: none;
+    
+    transform: rotate(5deg);
+    
+    z-index: 3;
+}
+
+.barbe2 .chara_head--barbe2{
+    display: block;
+}
+
+.chara_head--frange{
+    //background-image: url(svg_chara/frange.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 110%;
+    height: 100%;
+    
+    position: absolute;
+    top: -10%;
+    left: -3%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.frange .chara_head--frange{
+    display: block;
+}
+
+.chara_head--frange2{
+    //background-image: url(svg_chara/frange2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 110%;
+    height: 87%;
+    
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    
+    display: none;
+    
+    transform: rotate(0deg);
+}
+
+.frange2 .chara_head--frange2{
+    display: block;
+}
+
+.chara_body{
+    background:transparent;
+    
+    width: 100%;
+    height: 60%;
+    
+    position: absolute;
+    top: 40%;
+    
+    z-index: 0;
+}
+
+.rotate--top{
+    width: 70%;
+    height: 60%;
+    
+    position: absolute;
+    top: 0%;
+    left: 2%;
+    
+    transition: all ease 0.2s;
+    
+    z-index: 1;
+}
+ 
+.chara_body--top{
+    //background-image: url(svg_chara/body1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 90%;
+    height: 60%;
+    
+    position: absolute;
+    top: -15%;
+    left: 15%;
+    
+    transition: all ease 0.2s;
+    
+    z-index: -1;
+}
+
+.chara_body--bottom{
+    //background-image: url(svg_chara/body2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    width: 60%;
+    height: 55%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    
+    transition: all ease 0.2s;
+    
+    z-index: 1;
+}
+
+.chara_body--legL{
+    //background-image: url(svg_chara/legL.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 60%;
+    height: 87%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    
+    z-index: -1;
+}
+
+.chara_body--legR{
+    //background-image: url(svg_chara/legR.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 60%;
+    height: 87%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    
+    z-index: -1;
+}
+
+.chara_body--armL1{
+    //background-image: url(svg_chara/arm_L1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 45%;
+    height: 100%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    
+    transform-origin: top center;
+    
+    transition: all 0.2s ease;
+    
+    z-index: 1;
+}
+
+.chara_body--armL2{
+    //background-image: url(svg_chara/arm_L2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 110%;
+    height: 120%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    
+    transform-origin: top center;
+    
+    transition: all 0.2s ease;
+}
+
+.pose_wonder .chara_body--armL1{
+    top: 25%;
+    left: 80%;
+    
+    transform: rotate(60deg);
+}
+
+.pose_wonder .chara_body--armL2{
+    top: 105%;
+    left: 15%;
+    
+    transform: rotate(110deg);
+}
+
+.pose_hanche .chara_body--armL1{
+    top: 0%;
+    left: 75%;
+    
+    transform: rotate(-30deg);
+}
+
+.pose_hanche .chara_body--armL2{
+    top: 100%;
+    left: 40%;
+    
+    transform: rotate(90deg);
+}
+
+.pose_fight .chara_body--armL1{
+    top: 0%;
+    left: 75%;
+    
+    transform: rotate(-10deg);
+}
+
+.pose_fight .chara_body--armL2{
+    top: 110%;
+    left: 0%;
+    
+    transform: rotate(150deg);
+}
+
+.pose_fight .rotate--top{
+    transform: rotate(-10deg);
+}
+
+.pose_success .rotate--top{
+    left: -2%;
+}
+
+.pose_success .chara_head--hairLong1, .pose_success .chara_head--hairLong2, .pose_success .chara_head--hairLong3{
+    left: -20%;
+    transform: rotate(0deg);
+}
+
+.pose_fight .chara_head--hairLong1, .pose_fight .chara_head--hairLong2{
+    left: -35%;
+    transform: rotate(-10deg);
+}
+
+.pose_fight .chara_head--hairLong3{
+    left: -27%;
+    transform: rotate(-10deg);
+}
+
+.pose_fight .chara_body--armR1, .pose_success .chara_body--armR1{
+    top: -12%;
+    left: 0%;
+    
+    transform: rotate(60deg);
+}
+
+.pose_fight .chara_body--armR2, .pose_success .chara_body--armR2{
+    top: 100%;
+    left: 10%;
+    
+    transform: rotate(160deg) scaleY(0.5);
+}
+
+.pose_success .chara_body--armL1{
+    top: 40%;
+    left: 50%;
+    
+    transform: rotate(-150deg);
+}
+
+.pose_success .chara_body--armL2{
+    top: 80%;
+    left: 40%;
+    
+    transform: rotate(360deg);
+}
+
+.pose_weird .chara_head--hairLong1, .pose_weird .chara_head--hairLong2{
+    left: -35%;
+    transform: rotate(-10deg);
+}
+
+.pose_weird .chara_head--hairLong3{
+    left: -27%;
+    transform: rotate(-10deg);
+}
+
+.pose_weird .rotate--top{
+    transform: rotate(-10deg);
+}
+
+.pose_weird .chara_body--armL1{    
+    transform: rotate(-20deg);
+}
+
+.pose_weird .chara_body--armL2{
+    left: 40%;
+    
+    transform: rotate(15deg);
+}
+
+.pose_weird .chara_body--armR1{ 
+    top: -12%;
+    left: 0%;
+    transform: rotate(60deg);
+}
+
+.pose_weird .chara_body--armR2{
+    left: 40%;
+    
+    transform: rotate(-0deg);
+}
+
+.pose_victory .chara_head--hairLong1{
+    left: -10%;
+    top: -85%;
+    transform: rotate(5deg);
+}
+
+.pose_victory .chara_head--hairLong2{
+    left: -10%;
+    top: -205%;
+    transform: rotate(5deg);
+}
+
+.pose_victory .chara_head--hairLong3{
+    left: -15%;
+    top: -190%;
+    transform: rotate(5deg);
+}
+
+.pose_victory .rotate--top{
+    left: -2%;
+    transform: rotate(5deg);
+}
+
+.pose_victory .chara_body--armL1{ 
+    top: 20%;
+    left: 50%;
+    transform: rotate(230deg);
+}
+
+.pose_victory .chara_body--armL2{
+    left: 40%;
+    
+    transform: rotate(0deg);
+}
+
+.pose_victory .chara_body--armR1{ 
+    top: -30%;
+    left: 5%;
+    transform: rotate(170deg);
+}
+
+.pose_victory .chara_body--armR2{
+    left: 25%;
+    
+    transform: rotate(0deg);
+}
+
+.pose_shocked .rotate--top{
+    transform: rotate(-10deg);
+}
+
+.pose_shocked .chara_body--armL1{ 
+    top: 25%;
+    left: 80%;
+    transform: rotate(50deg);
+}
+
+.pose_shocked .chara_body--armL2{
+    top: 100%;
+    left: -5%;
+    
+    transform: rotate(150deg);
+}
+
+.pose_shocked .chara_body--armR1{ 
+    transform: rotate(70deg);
+}
+
+.pose_shocked .chara_body--armR2{
+    top: 115%;
+    left: 15%;
+    
+    transform: rotate(130deg);
+}
+
+.pose_shocked .chara_head--hairLong1, .pose_shocked .chara_head--hairLong2, .pose_shocked .chara_head--hairLong3{
+    left: -35%;
+    transform: rotate(-10deg);
+}
+
+.pose_tired .chara_head--hairLong1, .pose_tired .chara_head--hairLong2{
+    left: -35%;
+    transform: rotate(-10deg);
+}
+
+.pose_tired .chara_head--hairLong3{
+    left: -27%;
+    transform: rotate(-10deg);
+}
+
+.pose_tired .rotate--top{
+    transform: rotate(-10deg);
+}
+
+.pose_tired .chara_body--armL1{ 
+    top: 20%;
+    left: 80%;
+    transform: rotate(10deg);
+}
+
+.pose_tired .chara_body--armL2{
+    
+    transform: rotate(10deg);
+}
+
+.pose_tired .chara_body--armR1{
+    top: -7%;
+    left: 5%;
+    transform: rotate(40deg);
+}
+
+.pose_tired .chara_body--armR2{
+    top: 70%;
+    left: 30%;
+    
+    transform: rotate(-10deg);
+}
+
+.pose_defend .rotate--top{
+    transform: rotate(-10deg);
+}
+
+.pose_defend .chara_body--armL1{ 
+    top: 10%;
+    left: 80%;
+    transform: rotate(-10deg);
+}
+
+.pose_defend .chara_body--armL2{
+    left: 40%;
+    transform: rotate(25deg);
+}
+
+.pose_defend .chara_body--armR1{
+    top: -20%;
+    left: -5%;
+    transform: rotate(110deg);
+}
+
+.pose_defend .chara_body--armR2{
+    top: 90%;
+    left: -15%;
+    
+    transform: rotate(-130deg) scaleY(0.5);
+}
+
+.chara_body--armR1{
+    //background-image: url(svg_chara/arm_L1.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 25%;
+    height: 40%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: -10%;
+    left: 7%;
+    
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
+    
+    z-index: -2;
+}
+
+.chara_body--armR2{
+    //background-image: url(svg_chara/arm_L2.svg);
+    //background-repeat: no-repeat;
+    //background-size: contain;
+    
+    width: 100%;
+    height: 110%;
+    
+    margin: auto;
+    
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    
+    transform-origin: top center;
+    transform: rotate(-10deg);
+    transition: all 0.2s ease;
+    
+    z-index: -2;
+}
