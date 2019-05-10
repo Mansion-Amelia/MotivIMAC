@@ -66,7 +66,14 @@
                         ?>
 
                 </select>
-            <!-- Ajouter description au survol -->
+                <?php
+                    $result = $pdo->query($requete) or die ("Requete fail. <a href='".$root_auth."form_user.php'>Retry</a>");
+                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        echo "<div data-id_universe='".$row["id_universe"]."' class='alert alert-primary'>".$row["description_universe"]."</div>";
+                      
+                    }
+                ?> 
+                
         </fieldset>
         
         <fieldset>
@@ -366,6 +373,21 @@
                     .removeClass(myPose)
                     .addClass("worry");
 
+            })
+
+
+            id = $("#id_universe").children("option:selected").attr("value");
+            $("div[data-id_universe]").each(function(){
+                $(this).addClass("d-none");
+            })
+            $("div[data-id_universe="+id+"]").removeClass("d-none");
+
+            $("#id_universe").on("change", function(){
+                id = $(this).children("option:selected").attr("value");
+                $("div[data-id_universe]").each(function(){
+                    $(this).addClass("d-none");
+                })   
+                $("div[data-id_universe="+id+"]").removeClass("d-none");
             })
         })
     </script>
