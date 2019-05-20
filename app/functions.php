@@ -3,7 +3,7 @@
 function bdd_connection(){
     $username='root';
     $password='';
-    $database='MotivIMAC';
+    $database='imac_projet';
 
     $pdo =new PDO('mysql:host=localhost;dbname='.$database,$username,$password);
     $pdo->exec("SET NAMES utf8");

@@ -2,7 +2,7 @@
 
 $username='root';
 $password='';
-$database='habitica';
+$database='imac_projet';
 
 $pdo=new PDO('mysql:host=localhost;dbname='.$database,$username,$passwd);
 
