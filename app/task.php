@@ -2,6 +2,34 @@
 
 require_once('functions.php');
 
+
+
+
+function read_task_brief(){
+    $id_user=$_SESSION["id"];
+    $pdo = bdd_connection();
+    
+    $request= "SELECT * FROM task, category, difficulty
+    WHERE task.id_user='".$id_user."'
+    AND task.id_category=category.id_category
+    AND task.id_difficulty=difficulty.id_difficulty";
+    $result = $pdo->query($request) or die ("Erreur : la connexion a échoué.");
+    
+    if($result->rowCount()<1){
+        echo "<p>Aucune tâche</p>";
+    }else{
+        echo "<ul class='board'>";
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                echo "<li class='list-group-item'><h5>" . $row["name_task"]. "</h5>
+                <h6>" . $row["start_task"]. " - " . $row["end_task"]. "</h6>
+                <p>" . $row["description_task"]. "</p></li>";
+        }
+        echo "</ul>";
+    }
+}
+
+
+
 function read_task(){
     $id_user=$_SESSION["id"];
     $pdo = bdd_connection();
@@ -17,22 +45,27 @@ function read_task(){
     }else{
         echo "<ul class='board'>";
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                echo "<li class='board_item'>Tâche: " . $row["name_task"]. "
-                <br>
-                Description: " . $row["description_task"]. "<br>
-                Date de début: " . $row["start_task"]. "
-                <br>
-                Date de fin: " . $row["end_task"]. "
-                <br>
-                Catégorie: " . $row["name_category"]. "
-                <br>
-                Difficulté: " . $row["name_difficulty"]. "</li>
+
+
+
+/*                <li class="list-group-item">
+                    <h5>Nom de tâche</h5>
+                    <h6>Debut - Fin</h6>
+                    <p>Description</p>
+                    <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Modifier la tâche</button> -->
+                  </li>
+*/
+                echo "<li class='list-group-item'><h5><b>Nom : </b>" . $row["name_task"]. "</h5>
+                <h6><b>Dates : </b>" . $row["start_task"]. " - " . $row["end_task"]. "</h6>
+                <h6><b>Catégorie : </b>" . $row["name_category"]. "</h6>
+                <h6><b>Difficulté : </b>" . $row["name_difficulty"]. "</h6>
+                <p><b>Description : </b>" . $row["description_task"]. "</p>
                 <div class='board_btns'>
-                <a class='board_btn info' href='form_task.php?id_task=".$row["id_task"]."'>Modifier</a>
+                <a class='btn btn-primary' href='form_task.php?id_task=".$row["id_task"]."'>Modifier</a>
                 <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#task_popup' data-id='".$row["id_task"]."' data-name='".$row["name_task"]."'>
                   Supprimer
                 </button>                
-                </div>";
+                </div></li>";
         }
         echo "</ul>";
         echo "<!-- Modal -->
@@ -61,11 +94,11 @@ function read_task(){
 function create_task(){
     $pdo=bdd_connection();
     
-    if(is_connected()){
+    //if(is_connected()){
         $id = $_SESSION["id"];
-    }else{
-        return FALSE;
-    }
+    //}else{
+        //return FALSE;
+   // }
 
     if(isset($_POST["name_task"], $_POST["description_task"], $_POST["start_task"], $_POST["end_task"], $_POST["id_category"], $_POST["id_difficulty"])){
         /* Remember the inputs */
@@ -92,9 +125,9 @@ function create_task(){
 
 function update_task($id_task){
     $pdo=bdd_connection();
-    if(is_connected()){
+    //if(is_connected()){
         $id = $_SESSION["id"];
-    }
+    //}
     
     if(isset($_POST["name_task"], $_POST["description_task"], $_POST["start_task"], $_POST["end_task"], $_POST["id_category"], $_POST["id_difficulty"])){
         

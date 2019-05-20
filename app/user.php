@@ -30,11 +30,6 @@ function read_user(){
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             $percent =($row["finalscore_user"]-$row["min_level"])/($row["max_level"]-$row["min_level"])*100;
             echo <<<HTML
-            <div>Niveau : {$row["name_level"]}</div>
-            <div class="progress" style="width: 25%;">
-              <div class="progress-bar" role="progressbar" style="width: {$percent}%;" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
-            </div>
-            <div>Description : {$row["description_level"]}</div>
             <table class="table">
                 <tr>
                     <th class="table_item">Nom</th>
@@ -47,10 +42,6 @@ function read_user(){
                 <tr>
                     <th class="table_item">Pseudo</th>
                     <td class="table_item">{$row["username_user"]}</td>
-                </tr>
-                <tr>
-                    <th class="table_item">Mot de passe</th>
-                    <td class="table_item">{$row["password_user"]}</td>
                 </tr>
                 <tr>
                     <th class="table_item">Email</th>
