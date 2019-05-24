@@ -3,22 +3,40 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <?php
-        include($link_partials.'header.php');
-    ?>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MotivIMAC</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+<?php
+echo <<<HTML
+{$links}
+HTML;
+?>
+
+
+  <!-- Custom styles for this template-->
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  <link href="../../css/chara.css" rel="stylesheet">
+
+
 </head>
-    
-<body>
-    <?php
-        include($link_partials.'nav.php');
-    ?>
-    
-    <main class="main">
-    <h1 class="title">Inscription</h1>
-    
-    <?php
+
+<body class="bg-gradient-primary">
+
+  <?php
         require_once($link_app.'user.php');
         if(is_connected()){
             session_destroy();
@@ -31,30 +49,50 @@
         }
     ?>
 
-    <form class="form" method="POST" action="<?php echo $root_auth ?>create_user.php">
-        <fieldset>
-            <legend class="form_legend">Identité</legend>
-            <label class="form_label" for="lastname_user">Nom : </label>
+  <div class="container">
 
-                <input id="lastname_user" class="form_input" type="text" name="lastname_user" value="<?php echo (isset($_SESSION['lastname_user']) ? $_SESSION['lastname_user'] : ''); ?>" required pattern="[A-Za-z' -]+">
-            <label class="form_label" for="firstname_user">Prénom : </label>
-                <input id="firstname_user" class="form_input" type="text" name="firstname_user" value="<?php echo (isset($_SESSION['firstname_user']) ? $_SESSION['firstname_user'] : ''); ?>" required pattern="[A-Za-z' -]+">
-            <label class="form_label" for="username_user">Pseudo : </label>
-                <input id="username_user" class="form_input" type="text" name="username_user" value="<?php echo (isset($_SESSION['username_user']) ? $_SESSION['username_user'] : ''); ?>" required pattern="[0-9A-Za-z' -]+">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Créer un compte !</h1>
+              </div>
+              <form class="form" method="POST" action="<?php echo $root_auth ?>create_user.php">
 
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input id="lastname_user" class="form-control form-control-user" type="text" placeholder="Nom" name="lastname_user" value="<?php echo (isset($_SESSION['lastname_user']) ? $_SESSION['lastname_user'] : ''); ?>" required pattern="[A-Za-z' -]+">
+                  </div>
+                  <div class="col-sm-6">
+                    <input id="firstname_user" class="form-control form-control-user" type="text" placeholder="Prénom" name="firstname_user" value="<?php echo (isset($_SESSION['firstname_user']) ? $_SESSION['firstname_user'] : ''); ?>" required pattern="[A-Za-z' -]+">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input id="username_user" placeholder="Nom d'utilisateur" class="form-control form-control-user" type="text" name="username_user" value="<?php echo (isset($_SESSION['username_user']) ? $_SESSION['username_user'] : ''); ?>" required pattern="[0-9A-Za-z' -]+">
                 <?php
                     if(isset($_GET["error"]) && $_GET["error"]=="name"){
                         echo "<div class='alert alert-danger'>Ce nom est déjà utilisé. Veuillez en utiliser un autre.</div>";
                     }
                 ?>
-            <label class="form_label" for="password_user">Mot de passe : </label>
-                <input id="password_user" class="form_input" type="password" name="password_user" value="<?php echo (isset($_SESSION['password_user']) ? $_SESSION['password_user'] : ''); ?>" required>
-        </fieldset>
-        
-        <fieldset>
-            <legend class="form_legend">Univers</legend>
-            <label class="form_label" for='id_universe'>Univers : </label>
-                <select id="id_universe" class="form_input" name='id_universe' required>";
+                  </div>
+                  <div class="col-sm-6">
+                    <input id="password_user" class="form-control form-control-user" placeholder="Mot de passe" type="password" name="password_user" value="<?php echo (isset($_SESSION['password_user']) ? $_SESSION['password_user'] : ''); ?>" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input id="email_user" placeholder="E-mail" class="form-control form-control-user" type="email" name="email_user" value="<?php echo (isset($_SESSION['email_user']) ? $_SESSION['email_user'] : ''); ?>" required>
+                </div>
+                <div class="form-group">
+                  <input id="mobile_user" class="form-control form-control-user" type="tel" name="mobile_user" value="<?php echo (isset($_SESSION['mobile_user']) ? $_SESSION['mobile_user'] : ''); ?>" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" placeholder="Téléphone">
+                </div>
+                <div class="form-group">
+                  <select id="id_universe" class="form-control" name='id_universe' required>";
                         <?php
                         while($row = $result->fetch(PDO::FETCH_ASSOC)){
                             if($row['id_universe']==$_SESSION["id_universe"]){
@@ -66,19 +104,16 @@
                         ?>
 
                 </select>
-            <!-- Ajouter description au survol -->
-        </fieldset>
-        
-        <fieldset>
-            <legend class="form_legend">Contact</legend>
-            <label class="form_label" for="email_user">Email : </label>
-                <input id="email_user" class="form_input" type="email" name="email_user" value="<?php echo (isset($_SESSION['email_user']) ? $_SESSION['email_user'] : ''); ?>" required>
-            <label class="form_label" for="mobile_user">Téléphone mobile : </label>
-                <input id="mobile_user" class="form_input" type="tel" name="mobile_user" value="<?php echo (isset($_SESSION['mobile_user']) ? $_SESSION['mobile_user'] : ''); ?>" required pattern=0[0-9]{9}>
+                <br>
+                <?php
+                    $result = $pdo->query($requete) or die ("Requete fail. <a href='".$root_auth."form_user.php'>Retry</a>");
+                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        echo "<div data-id_universe='".$row["id_universe"]."' class='alert alert-primary'>".$row["description_universe"]."</div>";
+                      
+                    }
+                ?> 
+                </div>
 
-        </fieldset>
-        
-        <fieldset>
             <legend class="form_legend">Avatar</legend>
             <div class="chara worry <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>">
                     <?php
@@ -297,77 +332,118 @@
             <textarea id="hair_style" name="hair_style" hidden>
                 <?php echo (isset($_SESSION['hair_style']) ? $_SESSION['hair_style'] : ''); ?>
             </textarea>
-        </fieldset>
-        <button class="form_btn" type="submit">Valider</button>
-    </form>
-    </main>
-    
-    <script>
-        function checkChara(input){
-            if(input.attr("type") == "color"){
-                color = input.val();
-                el = input.attr("data-change");
-                el = el.split(" ");
 
-                el.forEach(function(item){
-                    item = "."+item;
-                    $(item).children("svg").children("path").attr("fill", color);
-                    $(item).children("svg").children("ellipse").attr("fill", color);
-                    
-                })
-            }else if(input.attr("type") == "checkbox"){
-                el = input.attr("id");
-                if(input.prop("checked")){
-                    $('.chara').addClass(el);
-                }else{
-                    $('.chara').removeClass(el);
-                }
+
+                <button class="btn btn-primary btn-user btn-block" type="submit">S'inscrire</button>
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="form_login.php">Vous avez déjà un compte ?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+
+  <script>
+    function checkChara(input){
+        if(input.attr("type") == "color"){
+            color = input.val();
+            el = input.attr("data-change");
+            el = el.split(" ");
+
+            el.forEach(function(item){
+                item = "."+item;
+                $(item).children("svg").children("path").attr("fill", color);
+                $(item).children("svg").children("ellipse").attr("fill", color);
+                
+            })
+        }else if(input.attr("type") == "checkbox"){
+            el = input.attr("id");
+            if(input.prop("checked")){
+                $('.chara').addClass(el);
+            }else{
+                $('.chara').removeClass(el);
             }
         }
-        function writeClasses(inputs){
-            $("#hair_style").val("");
-            classes = "";
-                inputs.each(function(key, input){
-                    //console.log(input);
-                    el = input.id;
-                    classes += " "+el;
-                    classes = classes.substring(1,classes.length);
-                }) ;
-                $("#hair_style").val(classes);
-        }
-        
-        var eyes = ["worry", "spiral", "angry", "happy", "arrow", "empty"];
-        var expression = ["tears1", "tears2", "transpi1", "transpi2", "waves"];
-        var pose = ["wonder", "fight", "success", "victory", "defend", "hanche", "weird", "shocked", "tired"];
-        $(document).ready(function(){
-            //writeClasses($("#form_chara input:checked"));
-            $("#form_chara input").each(function(){
-                checkChara($(this));
-            });
+    }
+    function writeClasses(inputs){
+        $("#hair_style").val("");
+        classes = "";
+            inputs.each(function(key, input){
+                //console.log(input);
+                el = input.id;
+                classes += " "+el;
+                classes = classes.substring(1,classes.length);
+            }) ;
+            $("#hair_style").val(classes);
+    }
+    
+    var eyes = ["worry", "spiral", "angry", "happy", "arrow", "empty"];
+    var expression = ["tears1", "tears2", "transpi1", "transpi2", "waves"];
+    var pose = ["wonder", "fight", "success", "victory", "defend", "hanche", "weird", "shocked", "tired"];
+    $(document).ready(function(){
+        //writeClasses($("#form_chara input:checked"));
+        $("#form_chara input").each(function(){
+            checkChara($(this));
+        });
+        writeClasses($("#form_chara input:checked"));
+        $("#form_chara input").on("change", function(){
+            checkChara($(this));
             writeClasses($("#form_chara input:checked"));
-            $("#form_chara input").on("change", function(){
-                checkChara($(this));
-                writeClasses($("#form_chara input:checked"));
-            })
-            
-            $(".chara").on("mouseenter", function(){
-                myEyes = eyes[Math.floor(Math.random()*eyes.length)];
-                myExpression = expression[Math.floor(Math.random()*expression.length)];
-                myPose = "pose_"+pose[Math.floor(Math.random()*pose.length)];
-                
-                $('.chara').removeClass("worry")
-                    .addClass(myEyes)
-                    .addClass(myExpression)
-                    .addClass(myPose);
-
-            }).on("mouseleave", function(){
-                $('.chara').removeClass(myEyes)
-                    .removeClass(myExpression)
-                    .removeClass(myPose)
-                    .addClass("worry");
-
-            })
         })
-    </script>
+        
+        $(".chara").on("mouseenter", function(){
+            myEyes = eyes[Math.floor(Math.random()*eyes.length)];
+            myExpression = expression[Math.floor(Math.random()*expression.length)];
+            myPose = "pose_"+pose[Math.floor(Math.random()*pose.length)];
+            
+            $('.chara').removeClass("worry")
+                .addClass(myEyes)
+                .addClass(myExpression)
+                .addClass(myPose);
+
+        }).on("mouseleave", function(){
+            $('.chara').removeClass(myEyes)
+                .removeClass(myExpression)
+                .removeClass(myPose)
+                .addClass("worry");
+
+        })
+
+
+        id = $("#id_universe").children("option:selected").attr("value");
+        $("div[data-id_universe]").each(function(){
+            $(this).addClass("d-none");
+        })
+        $("div[data-id_universe="+id+"]").removeClass("d-none");
+
+        $("#id_universe").on("change", function(){
+            id = $(this).children("option:selected").attr("value");
+            $("div[data-id_universe]").each(function(){
+                $(this).addClass("d-none");
+            })   
+            $("div[data-id_universe="+id+"]").removeClass("d-none");
+        })
+    })
+</script>
+
+
+
 </body>
+
 </html>

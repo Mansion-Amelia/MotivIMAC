@@ -1,0 +1,27 @@
+/*Login Page*/
+
+.bg-login-image {
+	background: url("../img/basic_login.png");
+	background-position: center;
+ 	background-size: cover;
+}
+
+.loginrow {
+	height: 36rem;
+}
+
+/*Regiter Page*/
+
+.bg-register-image {
+  background: url("../img/basic_login.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#content{
+    padding-top: 2rem;
+}
+
+.chart-area{
+    overflow: auto;
+}
