@@ -64,18 +64,10 @@
           <!-- Content Row -->
           <div class="row">
             <div class="col-xl">
-              <!-- Approach -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-secondary">Vos tâches </h6>
-                </div>
-                <div class="card-body">
                   <?php
                   require_once($link_app.'task.php');
                   read_task();
                   ?>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -84,12 +76,6 @@
 
       </div>
       <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <?php
-          include($link_partials."footer.php");
-          ?>
-      <!-- End of Footer -->
         </div>
     <!-- End of Content Page -->
     </div>
@@ -97,6 +83,12 @@
 
   </div>
   <!-- End of Page Wrapper -->
+
+      <!-- Footer -->
+      <?php
+          include($link_partials."footer.php");
+          ?>
+      <!-- End of Footer -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
