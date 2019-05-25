@@ -17,3 +17,11 @@
   background-position: center;
   background-size: cover;
 }
+
+#content{
+    padding-top: 2rem;
+}
+
+.chart-area{
+    overflow: auto;
+}
