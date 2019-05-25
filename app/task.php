@@ -37,7 +37,8 @@ function read_task(){
     $request= "SELECT * FROM task, category, difficulty
     WHERE task.id_user='".$id_user."'
     AND task.id_category=category.id_category
-    AND task.id_difficulty=difficulty.id_difficulty";
+    AND task.id_difficulty=difficulty.id_difficulty
+    ORDER BY task.end_task";
     $result = $pdo->query($request) or die ("Erreur : la connexion a échoué.");
     echo '<div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -140,9 +141,9 @@ function update_task($id_task){
 
 function delete_task($id_task){
     $pdo=bdd_connection();
-    if(is_connected()){
+    //if(is_connected()){
         $id = $_SESSION["id"];
-    }
+    //}
     
     // Get points linked to the task, deadline of the task, actual user score
     $points = 0;

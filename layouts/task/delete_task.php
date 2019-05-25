@@ -11,14 +11,11 @@
 </head>
     
 <body>
-    <?php
-        include($link_partials.'nav.php');
-    ?>
     <main class="main">
     
     <?php
         require_once($link_app.'task.php');
-        if(isset($_GET["id_task"],$_GET["name_task"]) && is_numeric($_GET["id_task"]) && is_connected()){
+        if(isset($_GET["id_task"],$_GET["name_task"]) && is_numeric($_GET["id_task"])){
             $pdo=bdd_connection();
             $request = 'SELECT * FROM task WHERE id_task='.$_GET["id_task"];
             $result = $pdo->query($request) or die ("Requete fail. <a href='form_task.php'>Retry</a>");
