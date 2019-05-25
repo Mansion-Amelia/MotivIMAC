@@ -36,15 +36,13 @@
             <h1 class="h3 mb-0 text-gray-800">Tableau de bord</h1>
           </div>
 
-          <div class="container">
-            <h3>Votre niveau</h3>
+          
             <?php
             require_once($link_app.'user.php');
             $test = progress_user();
             echo $test;
             ?>
             <br>
-          </div>
 
 
           <!-- Content Row -->
