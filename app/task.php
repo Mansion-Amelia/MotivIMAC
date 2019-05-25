@@ -20,7 +20,7 @@ function read_task_brief(){
     }else{
         echo "<ul class='board'>";
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                echo "<li class='list-group-item'><h5>" . $row["name_task"]. "</h5>
+                echo "<li class='list-group-item'><h5 class='font-weight-bold'>" . $row["name_task"]. "</h5>
                 <h6>" . $row["start_task"]. " - " . $row["end_task"]. "</h6>
                 <p>" . $row["description_task"]. "</p></li>";
         }

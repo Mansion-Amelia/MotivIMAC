@@ -127,44 +127,23 @@
   </a>
     
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
-  <script>
-        var eyes = ["worry", "spiral", "angry", "happy", "arrow", "empty"];
-        var expression = ["tears1", "tears2", "transpi1", "transpi2", "waves"];
-        var pose = ["wonder", "fight", "success", "victory", "defend", "hanche", "weird", "shocked", "tired"];
-        $(".chara").on("mouseenter", function(){
-                myEyes = eyes[Math.floor(Math.random()*eyes.length)];
-                myExpression = expression[Math.floor(Math.random()*expression.length)];
-                myPose = "pose_"+pose[Math.floor(Math.random()*pose.length)];
-                
-                $('.chara').removeClass("worry")
-                    .addClass(myEyes)
-                    .addClass(myExpression)
-                    .addClass(myPose);
-
-            }).on("mouseleave", function(){
-                $('.chara').removeClass(myEyes)
-                    .removeClass(myExpression)
-                    .removeClass(myPose)
-                    .addClass("worry");
-
-            })
-    </script>
+    <script src="../js/app.js"></script>
 
 </body>
 
