@@ -221,7 +221,7 @@ c0,0-17-8.979-18-20.978C48,26.979,3,66,8,49z"/>
                 <div class="chara_head--mustache">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 76.605 20.168" enable-background="new 0 0 76.605 20.168" xml:space="preserve">
 <path fill="<?php echo (isset($_SESSION['hair_color']) ? $_SESSION['hair_color'] : ''); ?>" d="M39.465,0c0,0,38.34,9.317,37.111,20.168c0,0-24.389-11.678-39.155-11.276L39.465,0z"/>
-<path fill="#B465A8" d="M34.088,0.129c0,0-35.56,6.772-34.041,16.224c0,0,22.424-9.296,36.256-8.444L34.088,0.129z"/>
+<path fill="<?php echo (isset($_SESSION['hair_color']) ? $_SESSION['hair_color'] : ''); ?>" d="M34.088,0.129c0,0-35.56,6.772-34.041,16.224c0,0,22.424-9.296,36.256-8.444L34.088,0.129z"/>
 </svg>
                 </div>
                 <div class="chara_head--barbe1">
