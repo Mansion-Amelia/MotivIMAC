@@ -60,3 +60,7 @@ form{
 .sticky-footer{
     flex-grow: 1;
 }
+
+.blockquote{
+    font-size: 1rem;
+}

@@ -97,7 +97,7 @@
                   <h6 class="m-0 font-weight-bold text-secondary">Motiv' yourself</h6>
                 </div>
                 <div class="card-body">
-                    <blockquote class="blockquote text-left">
+                    <blockquote class="blockquote text-justify">
                       <p>Ici, à l’IMAC, c’est facile de se démotiver, de se décourager devant une montagne de projets, des profs qui ne nous soutiennent pas toujours ou nos inquiétudes par rapport à notre avenir. Alors si tu es dans un de ces moments là où te ne penses pas pouvoir y arriver, regarde autour de toi. Tu verras des gens, tous différents, avec leur leurs points forts et leurs points faibles mais surtout avec leur personnalité et leur créativité. Ils sont incroyables et si tu es parmi eux c’est que tu l’es aussi.</p><p>
 Alors divise cette montagne de projets le plus possible, réduis la en plein de petites tâches faciles et résous les une par une, petit à petit.</p><p>
 Fais du mieux que tu peux et ça ça ne veut pas dire faire l’idéal que tu imagines mais faire ce dont tu es capable en prenant en compte tes besoins et le temps que tu as.</p><p>
