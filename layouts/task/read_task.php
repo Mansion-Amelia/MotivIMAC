@@ -128,13 +128,9 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <b>Motiv' IMAC</b> 2019</span>
-          </div>
-        </div>
-      </footer>
+      <?php
+          include($link_partials."footer.php");
+          ?>
       <!-- End of Footer -->
         </div>
     <!-- End of Content Page -->
