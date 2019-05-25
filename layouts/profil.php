@@ -28,9 +28,6 @@
 
       <!-- Main Content -->
       <div id="content">
-          
-
-        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -40,6 +37,13 @@
             <h1 class="h3 mb-0 text-gray-800">Votre profil</h1>
           </div>
 
+          
+          <?php
+            require_once($link_app.'user.php');
+            $progressBar = progress_user();
+            echo $progressBar;
+            ?>
+            <br>
 
 
 
