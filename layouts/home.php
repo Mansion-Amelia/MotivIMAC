@@ -98,8 +98,13 @@
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote text-left">
-                      <p>La vraie réussite, c'est quand tu gères les partiels tel Link défonçant Ganon !</p>
-                      <footer class="blockquote-footer">L'équipe de <cite title="Auteurs de la citation">MotivIMAC</cite></footer>
+                      <p>Ici, à l’IMAC, c’est facile de se démotiver, de se décourager devant une montagne de projets, des profs qui ne nous soutiennent pas toujours ou nos inquiétudes par rapport à notre avenir. Alors si tu es dans un de ces moments là où te ne penses pas pouvoir y arriver, regarde autour de toi. Tu verras des gens, tous différents, avec leur leurs points forts et leurs points faibles mais surtout avec leur personnalité et leur créativité. Ils sont incroyables et si tu es parmi eux c’est que tu l’es aussi.</p><p>
+Alors divise cette montagne de projets le plus possible, réduis la en plein de petites tâches faciles et résous les une par une, petit à petit.</p><p>
+Fais du mieux que tu peux et ça ça ne veut pas dire faire l’idéal que tu imagines mais faire ce dont tu es capable en prenant en compte tes besoins et le temps que tu as.</p><p>
+Et si jamais tu n’y arrives pas ou que tu n’es pas fier de ce que tu as rendu, eh bien n’oublie pas que de 1) plein d’IMAC sont là pour te soutenir et t’aider, et de 2) que ce projet ou cette note ne te définissent pas car tu es bien plus que ça. </p><p>
+                        Alors arrête de te poser des questions, tu ne joue pas ta vie ici, juste fais le, tout ira bien.</p>
+
+                      <footer class="blockquote-footer">- La Team <cite title="Auteurs de la citation">MotivIMAC</cite> -</footer>
                     </blockquote>
                 </div>
               </div>
