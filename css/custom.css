@@ -38,3 +38,25 @@ form{
     max-width: 800px;
     margin: auto;
 }
+
+#content{
+    position: relative;
+}
+
+.container-fluid>.sticky-footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    width: 100%;
+    
+}
+
+#content, #content-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-footer{
+    flex-grow: 1;
+}
