@@ -19,7 +19,7 @@
 
     <!-- Sidebar -->
     <?php
-      include ("../partials/sidebar.php");
+      include ($link_partials."sidebar.php");
     ?>
     <!-- End of Sidebar -->
 
@@ -67,7 +67,7 @@
               <!-- Approach -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-secondary">Vos tâches</h6>
+                  <h6 class="m-0 font-weight-bold text-secondary">Vos tâches </h6>
                 </div>
                 <div class="card-body">
                   <?php
