@@ -12,7 +12,8 @@ function read_task_brief(){
     $request= "SELECT * FROM task, category, difficulty
     WHERE task.id_user='".$id_user."'
     AND task.id_category=category.id_category
-    AND task.id_difficulty=difficulty.id_difficulty";
+    AND task.id_difficulty=difficulty.id_difficulty
+    ORDER BY task.end_task ASC";
     $result = $pdo->query($request) or die ("Erreur : la connexion a échoué.");
     
     if($result->rowCount()<1){
@@ -38,7 +39,7 @@ function read_task(){
     WHERE task.id_user='".$id_user."'
     AND task.id_category=category.id_category
     AND task.id_difficulty=difficulty.id_difficulty
-    ORDER BY task.end_task";
+    ORDER BY task.end_task ASC";
     $result = $pdo->query($request) or die ("Erreur : la connexion a échoué.");
     echo '<div class="card shadow mb-4">
                 <div class="card-header py-3">
