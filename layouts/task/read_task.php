@@ -6,7 +6,6 @@
 <html lang="en">
 
 <head>
-
   <?php
     include($link_partials."header.php");
     ?>
@@ -29,7 +28,6 @@
 
       <!-- Main Content -->
       <div id="content">
-
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -138,10 +136,8 @@
         </div>
       </footer>
       <!-- End of Footer -->
-        
         </div>
     <!-- End of Content Page -->
-        
     </div>
     <!-- End of Content Wrapper -->
 

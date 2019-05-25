@@ -29,6 +29,7 @@
       <!-- Main Content -->
       <div id="content">
           
+
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -97,7 +98,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <b>Motiv' IMAC</b> 2019</span>
+            <span>Copyright &copy; <b>MotivIMAC</b> 2019</span>
           </div>
         </div>
       </footer>

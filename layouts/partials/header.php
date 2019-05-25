@@ -10,6 +10,7 @@ echo <<<HTML
 <title>{$title}</title>
 <meta name="description" content="MotivIMAC">
 <meta name="author" content="GUYONNEAU Barbara - MANSION Amélia - JULIEN Victor - SGRO' Manon">
+
 {$links}
 HTML;
 
