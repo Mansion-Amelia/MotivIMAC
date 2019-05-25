@@ -98,7 +98,7 @@
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote text-left">
-                      <p>La vraie réussite, c'est quand tu gère les partiels tel Link défonçant Ganon !</p>
+                      <p>La vraie réussite, c'est quand tu gères les partiels tel Link défonçant Ganon !</p>
                       <footer class="blockquote-footer">L'équipe de <cite title="Auteurs de la citation">MotivIMAC</cite></footer>
                     </blockquote>
                 </div>
