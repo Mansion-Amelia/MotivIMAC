@@ -37,12 +37,12 @@
           </div>
 
           <div class="container">
-            <h3>Votre score</h3>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                <span class="sr-only">70% Complete</span>
-              </div>
-            </div>
+            <h3>Votre niveau</h3>
+            <?php
+            require_once($link_app.'user.php');
+            $test = progress_user();
+            echo $test;
+            ?>
             <br>
           </div>
 

@@ -12,6 +12,33 @@ function is_connected(){
     }
 }
 
+function progress_user(){
+    $id_user=$_SESSION["id"];
+    $pdo = bdd_connection();
+    
+    $request= "SELECT * FROM user,universe,level
+    WHERE user.id_user='".$id_user."'
+    AND user.id_universe=universe.id_universe
+    AND universe.id_universe=level.id_universe
+    AND level.max_level>user.finalscore_user
+    AND level.min_level<=user.finalscore_user";
+    $result = $pdo->query($request) or die (print_r($pdo->errorInfo())."Erreur : la requête a échoué.");
+
+    if($result->rowCount()<1){
+        echo ("Erreur : aucun utilisateur trouvé.");
+    }else{
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            $percent =($row["finalscore_user"]-$row["min_level"])/($row["max_level"]-$row["min_level"])*100;
+            echo <<<HTML
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
+        </div>
+HTML;
+            
+        }
+    }
+}
+
 function read_user(){
     $id_user=$_SESSION["id"];
     $pdo = bdd_connection();
