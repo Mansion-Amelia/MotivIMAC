@@ -46,17 +46,8 @@ function read_task(){
         echo "<ul class='board'>";
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
 
-
-
-/*                <li class="list-group-item">
-                    <h5>Nom de tâche</h5>
-                    <h6>Debut - Fin</h6>
-                    <p>Description</p>
-                    <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Modifier la tâche</button> -->
-                  </li>
-*/
                 echo "<li class='list-group-item'><h5><b>Nom : </b>" . $row["name_task"]. "</h5>
-                <h6><b>Dates : </b>" . $row["start_task"]. " - " . $row["end_task"]. "</h6>
+                <h6><b>Dates : </b>" . date("d/m/o", strtotime($row["start_task"])). " - " . date("d/m/o", strtotime($row["end_task"])). "</h6>
                 <h6><b>Catégorie : </b>" . $row["name_category"]. "</h6>
                 <h6><b>Difficulté : </b>" . $row["name_difficulty"]. "</h6>
                 <p><b>Description : </b>" . $row["description_task"]. "</p>
@@ -70,7 +61,7 @@ function read_task(){
         echo "</ul>";
         echo "<!-- Modal -->
             <div class='modal fade' id='task_popup' tabindex='-1' role='dialog' aria-labelledby='task_popup_label' aria-hidden='true'>
-              <div class='modal-dialog' role='document'>
+              <div class='modal-dialog modal-dialog-centered' role='document'>
                 <div class='modal-content'>
                   <div class='modal-header'>
                     <h5 class='modal-title' id='task_popup_label'>Supprimer une tâche</h5>
@@ -115,7 +106,7 @@ function create_task(){
             return TRUE;
         }
         else
-            echo "<p>La tâche n'a pas pu être créée : la date de début ne peut pas être ultérieure à la date de fin</p>";
+            $_SESSION["error_task"] = "La tâche n'a pas pu être créée : la date de début ne peut pas être ultérieure à la date de fin";
             return FALSE;
     }else{
         return FALSE;
