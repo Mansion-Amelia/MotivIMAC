@@ -4,7 +4,7 @@ function bdd_connection(){
     $username='root';
     $password='';
 
-    $database='habitica2';
+    $database='imac_projet';
 
 
     $pdo =new PDO('mysql:host=localhost;dbname='.$database,$username,$password);
