@@ -39,7 +39,11 @@ function read_task(){
     AND task.id_category=category.id_category
     AND task.id_difficulty=difficulty.id_difficulty";
     $result = $pdo->query($request) or die ("Erreur : la connexion a échoué.");
-    
+    echo '<div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-secondary">Vos tâches ('.$result->rowCount().')</h6>
+                </div>
+                <div class="card-body">';
     if($result->rowCount()<1){
         echo "<p>Aucune tâche</p>";
     }else{
@@ -59,6 +63,7 @@ function read_task(){
                 </div></li>";
         }
         echo "</ul>";
+        echo "</div></div>";
         echo "<!-- Modal -->
             <div class='modal fade' id='task_popup' tabindex='-1' role='dialog' aria-labelledby='task_popup_label' aria-hidden='true'>
               <div class='modal-dialog modal-dialog-centered' role='document'>
@@ -74,7 +79,7 @@ function read_task(){
                   </div>
                   <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Annuler</button>
-                    <a class='board_btn danger' href=''>Supprimer</a>
+                    <a class='btn btn-danger' href=''>Supprimer</a>
                   </div>
                 </div>
               </div>

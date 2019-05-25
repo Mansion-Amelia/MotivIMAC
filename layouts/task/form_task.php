@@ -51,7 +51,7 @@
               <!-- Approach -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tâches</h6>
+                  <h6 class="m-0 font-weight-bold text-secondary">Tâches</h6>
                 </div>
                 <div class="card-body">
                   
@@ -168,15 +168,11 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <b>Motiv' IMAC</b> 2019</span>
-          </div>
-        </div>
-      </footer>
+      <?php
+            include($link_partials."footer.php");
+        ?>
       <!-- End of Footer -->
-
+          </div>
     </div>
     <!-- End of Content Wrapper -->
 
@@ -206,15 +202,7 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
-  <script>
-        $(document).ready(function(){
-            $("button[data-target='#task_popup']").click(function(){
-                console.log('helle');
-                $('#task_popup .modal-body').text("Etes-vous sûr.e de vouloir supprimer la tâche : "+$(this).attr('data-name')+" ?");
-                $('#task_popup a').attr('href', 'delete_task.php?id_task='+$(this).attr('data-id')+'&name_task='+$(this).attr('data-name')+'');
-            })
-        })
-    </script>
+  <script src="../../js/app.js"></script>
 
 </body>
 

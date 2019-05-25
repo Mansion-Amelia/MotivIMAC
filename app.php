@@ -3,8 +3,8 @@
     // Roots
     $server="http://localhost/";
 
-    $link="C:\wamp64\www\IMAC/IMAC_1/Prog_web2/MotivIMAC/MotivIMAC/";
-    $root = $server."IMAC/IMAC_1/Prog_web2/MotivIMAC/MotivIMAC/";
+    $link="C:\wamp64\www\_habitica/repo3/";
+    $root = $server."_habitica/repo3/";
 
 
     $root_app = $root."app/";
