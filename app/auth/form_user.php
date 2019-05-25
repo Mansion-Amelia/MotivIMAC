@@ -388,8 +388,8 @@ HTML;
                 //console.log(input);
                 el = input.id;
                 classes += " "+el;
-                classes = classes.substring(1,classes.length);
             }) ;
+            classes = classes.substring(1,classes.length);
             $("#hair_style").val(classes);
     }
     
