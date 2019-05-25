@@ -115,7 +115,7 @@ function create_task(){
             return TRUE;
         }
         else
-            echo "<p>La tâche n'a pas pu être créée : la date de début ne peut pas être ultérieure à la date de fin</p>";
+            $_SESSION["error_task"] = "La tâche n'a pas pu être créée : la date de début ne peut pas être ultérieure à la date de fin";
             return FALSE;
     }else{
         return FALSE;

@@ -134,6 +134,13 @@
                     <input class="form-control form-control-user" id="end_task" type="date" name="end_task" value="<?php echo (isset($_SESSION['end_task']) ? $_SESSION['end_task'] : ''); ?>" required>
                   </div>
                 </div>
+                
+                <?php
+                    if(isset($_SESSION["error_task"]) && !empty($_SESSION["error_task"])){
+                        echo "<div class='alert alert-danger'>".$_SESSION["error_task"]."</div";
+                    }
+                
+                ?>
 
 
                 <div class="form-group row">

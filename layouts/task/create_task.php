@@ -8,7 +8,3 @@
             header('Location: form_task.php'); 
         }    
     ?>
-
-    </main>
-</body>
-</html>
