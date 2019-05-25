@@ -79,7 +79,7 @@ function read_task(){
                   </div>
                   <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Annuler</button>
-                    <a class='board_btn danger' href=''>Supprimer</a>
+                    <a class='btn btn-danger' href=''>Supprimer</a>
                   </div>
                 </div>
               </div>
