@@ -113,6 +113,7 @@
                 <?php
                     if(isset($_SESSION["error_task"]) && !empty($_SESSION["error_task"])){
                         echo "<div class='alert alert-danger'>".$_SESSION["error_task"]."</div";
+                        $_SESSION["error_task"] = "";
                     }
                 
                 ?>
