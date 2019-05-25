@@ -68,7 +68,7 @@ function progress_user_card(){
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: {$percent}%" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: {$percent}%" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
