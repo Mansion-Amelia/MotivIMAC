@@ -40,8 +40,31 @@
           <!-- Content Row -->
           <div class="row">
 
-
             <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        
+            <?php
+            require_once($link_app.'user.php');
+            $progressBar = progress_user_card();
+            echo $progressBar;
+            ?>
+                      
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                
+            
+              
+            <div class="col-xl-3 col-md-6 mb-4">
+                
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -56,9 +79,8 @@
                 </div>
               </div>
             </div>
+              
           </div>
-
-
 
 
           <!-- Content Row -->
