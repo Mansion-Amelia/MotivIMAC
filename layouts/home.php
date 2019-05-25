@@ -104,7 +104,7 @@ Fais du mieux que tu peux et ça ça ne veut pas dire faire l’idéal que tu im
 Et si jamais tu n’y arrives pas ou que tu n’es pas fier de ce que tu as rendu, eh bien n’oublie pas que de 1) plein d’IMAC sont là pour te soutenir et t’aider, et de 2) que ce projet ou cette note ne te définissent pas car tu es bien plus que ça. </p><p>
                         Alors arrête de te poser des questions, tu ne joue pas ta vie ici, juste fais le, tout ira bien.</p>
 
-                      <footer class="blockquote-footer">- La Team <cite title="Auteurs de la citation">MotivIMAC</cite> -</footer>
+                      <footer class="blockquote-footer">La Team <cite title="Auteurs de la citation">MotivIMAC</cite></footer>
                     </blockquote>
                 </div>
               </div>
