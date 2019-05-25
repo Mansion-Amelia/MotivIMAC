@@ -39,8 +39,8 @@
           
             <?php
             require_once($link_app.'user.php');
-            $test = progress_user();
-            echo $test;
+            $progressBar = progress_user();
+            echo $progressBar;
             ?>
             <br>
 

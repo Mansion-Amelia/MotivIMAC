@@ -32,6 +32,7 @@ function progress_user(){
             echo <<<HTML
         <div class="container">
             <h3>Niveau : {$row["name_level"]}</h3>
+            <p>{$row["description_level"]}</p>
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
         </div>
