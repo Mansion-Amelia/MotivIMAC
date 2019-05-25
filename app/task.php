@@ -46,7 +46,7 @@ function read_task(){
         echo "<ul class='board'>";
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
 
-                echo "<li class='list-group-item'><h5><b>Nom : </b>" . $row["name_task"]. "</h5>
+                echo "<li class='card card-body border-left-default'><h5><b>Nom : </b>" . $row["name_task"]. "</h5>
                 <h6><b>Dates : </b>" . date("d/m/o", strtotime($row["start_task"])). " - " . date("d/m/o", strtotime($row["end_task"])). "</h6>
                 <h6><b>Catégorie : </b>" . $row["name_category"]. "</h6>
                 <h6><b>Difficulté : </b>" . $row["name_difficulty"]. "</h6>

@@ -25,3 +25,11 @@
 .chart-area{
     overflow: auto;
 }
+
+li.card{
+    margin-bottom: 1rem;
+}
+
+.border-left-default{
+    border-left: 0.3rem solid #9a9a9a;
+}
