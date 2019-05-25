@@ -37,7 +37,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="{$link_css}sb-admin-2.min.css">
-<link rel="stylesheet" href="{$link_css}app.css">
 <link rel="stylesheet" href="{$link_css}chara.css">
 <link rel="stylesheet" href="{$link_css}custom.css">
 LINKS;
