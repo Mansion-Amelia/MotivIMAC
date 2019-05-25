@@ -34,9 +34,44 @@ function progress_user(){
             <h3>Niveau : {$row["name_level"]}</h3>
             <p>{$row["description_level"]}</p>
         <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
+          <div class="progress-bar" role="progressbar" style="width:{$percent}%" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
         </div>
         </div>
+HTML;
+            
+        }
+    }
+}
+
+function progress_user_card(){
+     $id_user=$_SESSION["id"];
+    $pdo = bdd_connection();
+    
+    $request= "SELECT * FROM user,universe,level
+    WHERE user.id_user='".$id_user."'
+    AND user.id_universe=universe.id_universe
+    AND universe.id_universe=level.id_universe
+    AND level.max_level>user.finalscore_user
+    AND level.min_level<=user.finalscore_user";
+    $result = $pdo->query($request) or die (print_r($pdo->errorInfo())."Erreur : la requête a échoué.");
+
+    if($result->rowCount()<1){
+        echo ("Erreur : aucun utilisateur trouvé.");
+    }else{
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            $percent =($row["finalscore_user"]-$row["min_level"])/($row["max_level"]-$row["min_level"])*100;
+            echo <<<HTML
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Niveau : {$row["name_level"]}</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{$percent}%</div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm mr-2">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: {$percent}%" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100">{$row["finalscore_user"]}/{$row["max_level"]}</div>
+                          </div>
+                        </div>
+                      </div>
 HTML;
             
         }
