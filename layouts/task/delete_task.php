@@ -15,7 +15,6 @@
         include($link_partials.'nav.php');
     ?>
     <main class="main">
-    <h1 class="title">Supprimer la tâche</h1>
     
     <?php
         require_once($link_app.'task.php');
@@ -28,23 +27,15 @@
                     die ("Wrong user. <a href='read_task.php'>Retry</a>");
                 }
                 if(delete_task($_GET["id_task"])){
-                    ?>
-                    <p class="text center">Votre tâche - <?php echo $_GET["name_task"] ?> - a bien été supprimée !</p>
-                    <?php
+                    redirect('read_task.php'); 
                 }else{
                     ?>
-                    <p class="text center">
-                        <a href='<?php echo $root_task ?>read_task.php'>Retour aux tâches</a>
-                    </p>
+                    redirect('read_task.php'); 
                     <?php
                 }
             }  
         }else{
-            ?>
-            <p class="text center">
-                <a href='<?php echo $root_task ?>read_task.php'>Retour aux tâches</a>
-            </p>
-            <?php
+            redirect('read_task.php'); 
         } 
     
     ?>
